@@ -88,6 +88,16 @@ body {
   background: var(--sunset-gradient);
 }
 
+/* Scroll-World-Theme (Engine-Variablen — Seite gewinnt über @layer sw) */
+.sw-root {
+  --sw-bg: #f7efe3; /* = Szenen-Hintergrund der Diorama-Stills (nahtlose Poster) */
+  --sw-ink: #1c1917;
+  --sw-ink-soft: #57534e;
+  --sw-accent: #ea580c;
+  --sw-font-display: var(--font-fraunces), Georgia, serif;
+  --sw-font-body: var(--font-geist-sans), system-ui, sans-serif;
+}
+
 /* Sanfter Glow hinter primären CTAs (Soft UI Evolution: subtle depth) */
 .cta-glow {
   box-shadow:
