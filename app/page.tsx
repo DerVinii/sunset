@@ -44,6 +44,9 @@ export default function Home() {
       {/* Scroll-World "Ein Tag mit Sunset Events" — Scroll scrubbt die Kamerafahrt */}
       <ScrollWorld />
 
+      {/* Weicher Übergang vom Creme der Welt in die Seitenfläche (auch im Dunkelmodus) */}
+      <div aria-hidden className="h-20 bg-gradient-to-b from-[#f7efe3] to-stone-50 dark:to-stone-950" />
+
       {/* Server-gerenderte Hero-Summary direkt unter der Welt (SEO-H1 + Conversion-Einstiege) */}
       <div className="border-b border-stone-200 bg-stone-50 dark:border-stone-800 dark:bg-stone-950">
         <Container className="py-14 sm:py-20">

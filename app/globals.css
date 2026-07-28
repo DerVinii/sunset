@@ -98,6 +98,29 @@ body {
   --sw-font-body: var(--font-geist-sans), system-ui, sans-serif;
 }
 
+/* Unter lg blendet die mobile Aktionsleiste (sticky-bar.tsx) unten ein — Text und
+   Scroll-Hinweis der Welt müssen darüber bleiben, sonst liegen sie dahinter. */
+@media (max-width: 1023px) {
+  .sw-root .sw-copy {
+    bottom: calc(clamp(56px, 12dvh, 110px) + env(safe-area-inset-bottom) + 60px);
+  }
+  .sw-root .sw-hint {
+    bottom: calc(78px + env(safe-area-inset-bottom));
+  }
+}
+
+/* Auf dem Handy ist zwischen Text und Aktionsleiste kein Platz mehr für den
+   Scroll-Hinweis — dort wird ohnehin von selbst gewischt. Überschrift etwas kleiner,
+   damit lange Wörter nicht bis an den Rand stoßen. */
+@media (max-width: 860px) {
+  .sw-root .sw-hint {
+    display: none;
+  }
+  .sw-root .sw-copy__title {
+    font-size: clamp(1.7rem, 7vw, 2.6rem);
+  }
+}
+
 /* Sanfter Glow hinter primären CTAs (Soft UI Evolution: subtle depth) */
 .cta-glow {
   box-shadow:

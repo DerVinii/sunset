@@ -15,9 +15,13 @@ import { mountScrollWorld } from "@/lib/scroll-world/scrub-engine";
  */
 
 const worldConfig = {
-  brand: { name: "Sunset Events", href: "#welt" },
+  // Kein eigener Balken: der Seiten-Header (Header.tsx) ist auf allen Seiten derselbe und
+  // liegt über der Welt. Zwei Kopfleisten übereinander wären doppelt und verdecken sich.
+  // Wegweiser innerhalb der Welt sind die Punkte am rechten Rand.
+  brand: null,
+  nav: false,
+  progress: false, // Fortschritt zeigen die Punkte am rechten Rand
   hint: "Scrollen — wir fliegen los",
-  nav: true,
   atmosphere: true,
   diveScroll: 1.25,
   connScroll: 0.85,
@@ -108,5 +112,8 @@ export function ScrollWorld() {
     };
   }, []);
 
-  return <div id="welt" ref={ref} className="sw-root" />;
+  // Der Seiten-Header ist 65 px hoch (h-16 + Trennlinie) und halbtransparent. Die Welt
+  // wird um genau diese Höhe hochgezogen und läuft darunter durch — sonst startete die
+  // Bühne zu tief und der Scroll-Hinweis am unteren Rand wäre beim Laden abgeschnitten.
+  return <div id="welt" ref={ref} className="sw-root -mt-[65px]" />;
 }
