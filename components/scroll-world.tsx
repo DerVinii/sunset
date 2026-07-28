@@ -21,6 +21,7 @@ const worldConfig = {
   atmosphere: true,
   diveScroll: 1.25,
   connScroll: 0.85,
+  crossfade: 0.16,
   sections: [
     {
       id: "location",
