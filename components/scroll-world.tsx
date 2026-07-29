@@ -8,9 +8,10 @@ import { mountScrollWorld } from "@/lib/scroll-world/scrub-engine";
  * Scrollen scrubbt eine durchgehende Kamerafahrt durch 5 Clay-Diorama-Szenen —
  * vom späten Nachmittag (Location) bis Mitternacht (Firmenfeier + CTA).
  *
- * Assets liegen in /public/world/. Aktuell: PLATZHALTER-Renderings (ffmpeg,
- * 0 Credits) — die Higgsfield-Generierung ersetzt sie 1:1 bei gleichen Dateinamen
- * (Prompts + Ablauf: world-gen/README.md). Copy folgt dem validierten Plan
+ * Assets liegen in /public/world/ (Higgsfield, seedance_2_0 in 1080p):
+ * dive-N.mp4 = Kameraflug in die Szene, conn-N.mp4 = Überflug zur nächsten,
+ * *-m.mp4 = derselbe Clip in 720p/15 fps für unterwegs (reine ffmpeg-Umkodierung).
+ * Ablauf und Prompts: world-gen/README.md. Copy folgt dem validierten Plan
  * (einfache Sprache, Ab-Preise als [PLATZHALTER], CTA → #termincheck).
  */
 
@@ -30,8 +31,10 @@ const worldConfig = {
     {
       id: "location",
       label: "Location",
-      still: "/world/still-1.png",
+      still: "/world/still-1.webp",
+      stillMobile: "/world/still-1-m.webp",
       clip: "/world/dive-1.mp4",
+      clipMobile: "/world/dive-1-m.mp4",
       accent: "#f59e0b",
       eyebrow: "Später Nachmittag",
       title: "Ein Ort, an dem alles passt.",
@@ -43,8 +46,10 @@ const worldConfig = {
     {
       id: "catering",
       label: "Catering",
-      still: "/world/still-2.png",
+      still: "/world/still-2.webp",
+      stillMobile: "/world/still-2-m.webp",
       clip: "/world/dive-2.mp4",
+      clipMobile: "/world/dive-2-m.mp4",
       accent: "#ea580c",
       eyebrow: "Goldene Stunde",
       title: "Essen, über das man noch lange redet.",
@@ -54,8 +59,10 @@ const worldConfig = {
     {
       id: "garten",
       label: "Bierwagen",
-      still: "/world/still-3.png",
+      still: "/world/still-3.webp",
+      stillMobile: "/world/still-3-m.webp",
       clip: "/world/dive-3.mp4",
+      clipMobile: "/world/dive-3-m.mp4",
       accent: "#d97706",
       eyebrow: "Sonnenuntergang",
       title: "Geliefert. Aufgebaut. Eingeschenkt.",
@@ -65,8 +72,10 @@ const worldConfig = {
     {
       id: "hochzeit",
       label: "Hochzeit",
-      still: "/world/still-4.png",
+      still: "/world/still-4.webp",
+      stillMobile: "/world/still-4-m.webp",
       clip: "/world/dive-4.mp4",
+      clipMobile: "/world/dive-4-m.mp4",
       accent: "#be123c",
       eyebrow: "Blaue Stunde",
       title: "Euer Tag. Unser Job.",
@@ -78,8 +87,10 @@ const worldConfig = {
     {
       id: "firmenfeier",
       label: "Firmenfeier",
-      still: "/world/still-5.png",
+      still: "/world/still-5.webp",
+      stillMobile: "/world/still-5-m.webp",
       clip: "/world/dive-5.mp4",
+      clipMobile: "/world/dive-5-m.mp4",
       accent: "#f59e0b",
       eyebrow: "Mitternacht",
       title: "Feiern, bis der Chef tanzt.",
@@ -94,6 +105,9 @@ const worldConfig = {
     },
   ],
   connectors: ["/world/conn-1.mp4", "/world/conn-2.mp4", "/world/conn-3.mp4", "/world/conn-4.mp4"],
+  // Handy-Satz: dieselben Aufnahmen in 720p/15 fps (ffmpeg-Umkodierung der Master,
+  // keine Neugenerierung) — 15 statt 71 MB, damit die Clips unterwegs rechtzeitig da sind.
+  connectorsMobile: ["/world/conn-1-m.mp4", "/world/conn-2-m.mp4", "/world/conn-3-m.mp4", "/world/conn-4-m.mp4"],
 };
 
 export function ScrollWorld() {

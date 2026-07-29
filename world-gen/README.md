@@ -41,6 +41,31 @@ auf `seedance_2_0` (72/45) neu rendern — Draft bleibt frame-locked, also nahtl
 6. **QA:** Seams screenshotten (kurz vor/nach jeder Naht — Frames müssen fast identisch sein),
    `video.seekable > 0`, reduced-motion zeigt Stills.
 
+## Handy-Satz (`*-m.mp4`, `*-m.webp`) — Pflicht, keine Credits
+
+Ein Clip wird komplett geladen, bevor er das erste Bild zeigen kann. Mit den 1080p-Mastern
+wiegt die Welt 80 MB — unterwegs kommen die Clips damit nicht rechtzeitig an und man sieht
+nur das Standbild, bis hart zur nächsten Szene geschnitten wird (gemessen bei 10 Mbit/s:
+kein einziger Kameraflug rechtzeitig da). Deshalb liegt neben jedem Master eine leichte
+Fassung. Das ist eine reine ffmpeg-Umkodierung der vorhandenen Master — **keine
+Neugenerierung, 0 Credits**:
+
+```bash
+# Clips: 1280x720, 15 fps, dichte Keyframes fürs Scrubben  → ~2 MB statt ~10 MB
+ffmpeg -i dive-N.mp4 -vf "fps=15,scale=1280:720:flags=lanczos" -c:v libx264 -preset slow \
+  -crf 29 -g 4 -keyint_min 4 -sc_threshold 0 -pix_fmt yuv420p -movflags +faststart -an dive-N-m.mp4
+# Poster: WebP statt PNG (9 MB → 1,3 MB)
+cwebp -q 86 still-N.png -o still-N.webp          # Desktop, native Größe
+cwebp -q 80 -resize 1280 0 still-N.png -o still-N-m.webp   # Handy
+```
+
+Warum 720p reicht: auf einem Hochkant-Handy zeigt `object-fit: cover` nur die mittleren
+~26 % der Bildbreite. Der sichtbare Ausschnitt ist bei 720p von dem des Masters nicht zu
+unterscheiden — geprüft im 390-px-Ausschnitt.
+
+Ergebnis: Handy-Gewicht 80 MB → 15 MB, alle neun Segmente laufen bei 10 Mbit/s durchgehend
+(auch bei schnellem Scrollen), bei 5 Mbit/s zeigt nur der allererste Clip kurz sein Poster.
+
 NSFW-Fehlalarme (Seedance mag „Hochzeit/Wein/Bett"-Kontexte nicht): 1) neu rollen,
 2) Triggerwörter entfernen + „empty, no people, architectural, tasteful", 3) einzelnen Clip
 auf `kling3_0` mit denselben Frames (Filter anders), 4) Connector-Slot auf `null` (Engine
