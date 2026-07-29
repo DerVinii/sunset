@@ -22,7 +22,7 @@ const initialState: InquiryState = { status: "idle", message: "" };
  * wenn die PLZ nicht in der gepflegten Liste steht. [PLZ-LISTE VOM UNTERNEHMER]
  */
 const plzZonen: Record<string, "A" | "B" | "C"> = {
-  // Beispiel-Einträge — [VOM UNTERNEHMER FÜR SEIN LIEFERGEBIET PFLEGEN]
+  // Beispiel-Einträge, [VOM UNTERNEHMER FÜR SEIN LIEFERGEBIET PFLEGEN]
   "39104": "A",
   "39106": "A",
   "39114": "A",
@@ -170,7 +170,7 @@ export function MietAnfrage() {
             {!abholung && (
               <>
                 <label className="mt-2 block text-sm font-medium">
-                  Deine PLZ — Lieferpreis sofort sehen
+                  Deine PLZ: Lieferpreis sofort sehen
                   <input
                     type="text"
                     inputMode="numeric"
@@ -190,7 +190,7 @@ export function MietAnfrage() {
                   <p className="mt-2 text-xs text-stone-500">
                     Feste Zonen inkl. Anlieferung + Abholung:{" "}
                     {site.deliveryZones.map((z) => `Zone ${z.zone} (${z.range}): ${z.price} €`).join(" · ")}
-                    {plz.length === 5 && " — deine PLZ ordnen wir dir im Angebot zu."}
+                    {plz.length === 5 && ", deine PLZ ordnen wir dir im Angebot zu."}
                   </p>
                 )}
               </>

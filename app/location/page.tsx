@@ -7,15 +7,15 @@ import { FaqSection } from "@/components/faq";
 import { faqLocation } from "@/lib/faq-data";
 
 export const metadata: Metadata = {
-  title: `Eventlocation in [ORT], ${site.region} — Platz für [30]–[120] Gäste`,
-  description: `Eventlocation mieten in ${site.region}: Kapazitäten, Technik, Parkplätze, Preise — alle Fakten auf einen Blick. Tagesmiete ab [PREIS] €, transparente Endreinigungs-Pauschale.`,
+  title: `Eventlocation in [ORT], ${site.region}, Platz für [30]–[120] Gäste`,
+  description: `Eventlocation mieten in ${site.region}: Kapazitäten, Technik, Parkplätze, Preise, alle Fakten auf einen Blick. Tagesmiete ab [PREIS] €, transparente Endreinigungs-Pauschale.`,
 };
 
-/** Säulen-Seite Location (Plan 5.6) — harte Fakten, EventVenue-Schema. */
+/** Säulen-Seite Location (Plan 5.6): harte Fakten, EventVenue-Schema. */
 const eventVenueJsonLd = {
   "@context": "https://schema.org",
   "@type": "EventVenue",
-  name: `${site.name} — Eventlocation`,
+  name: `${site.name}, Eventlocation`,
   address: {
     "@type": "PostalAddress",
     streetAddress: site.address.street,
@@ -34,10 +34,10 @@ export default function LocationPage() {
       <div className="border-b border-stone-200 bg-gradient-to-b from-stone-50 to-stone-50 dark:border-stone-800 dark:from-stone-900 dark:to-stone-950">
         <Container className="py-14 sm:py-20">
           <h1 className="font-display max-w-3xl text-3xl font-semibold tracking-tight sm:text-5xl">
-            Eventlocation in [ORT] — Platz für [30]–[120] Gäste.
+            Eventlocation in [ORT], Platz für [30]–[120] Gäste.
           </h1>
           <p className="mt-3 max-w-2xl text-lg text-stone-600 dark:text-stone-300">
-            Alle Fakten auf einen Blick — Kapazität, Technik, Preise. Keine Überraschungen.
+            Alle Fakten auf einen Blick: Kapazität, Technik, Preise. Keine Überraschungen.
           </p>
           <div className="mt-6 flex aspect-[21/9] items-center justify-center rounded-xl border border-dashed border-stone-300 bg-stone-100 text-sm text-stone-500 dark:border-stone-700 dark:bg-stone-900">
             3D-Visualisierung / Fotos der Location [BILDMATERIAL]
@@ -73,7 +73,7 @@ export default function LocationPage() {
       </Section>
 
       <Section className="bg-stone-50 dark:bg-stone-900/40">
-        <H2>Preise — transparent</H2>
+        <H2>Preise, transparent</H2>
         <div className="mt-6 grid gap-4 sm:grid-cols-3">
           {[
             { t: "Grundmiete", p: "ab [PREIS] €", d: "[Wochentag/Wochenende-Staffel]" },

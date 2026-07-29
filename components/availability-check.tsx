@@ -27,8 +27,8 @@ export function AvailabilityCheck({
 
   const disclaimer =
     tone === "sie"
-      ? "Anzeige unverbindlich — wir bestätigen Ihren Termin bis zum nächsten Werktag, 12:00 Uhr."
-      : "Anzeige unverbindlich — wir bestätigen deinen Termin bis zum nächsten Werktag, 12:00 Uhr.";
+      ? "Anzeige unverbindlich. Wir bestätigen Ihren Termin bis zum nächsten Werktag, 12:00 Uhr."
+      : "Anzeige unverbindlich. Wir bestätigen deinen Termin bis zum nächsten Werktag, 12:00 Uhr.";
 
   function onCheck() {
     if (!date) return;
@@ -67,14 +67,14 @@ export function AvailabilityCheck({
               {labelSubject} ist am {formatDate(result.date)} frei.{" "}
               {ctaTargetId && (
                 <a href={`#${ctaTargetId}`} className="underline">
-                  Jetzt anfragen — Datum wird übernommen.
+                  Jetzt anfragen. Datum wird übernommen.
                 </a>
               )}
             </p>
           )}
           {result.status === "auf-anfrage" && (
             <p className="font-medium text-amber-700 dark:text-amber-400">
-              Für den {formatDate(result.date)} liegt bereits eine Anfrage vor — {tone === "sie" ? "fragen Sie" : "frag"} gern trotzdem an, wir melden uns mit dem Stand.
+              Für den {formatDate(result.date)} liegt bereits eine Anfrage vor. {tone === "sie" ? "Fragen Sie" : "Frag"} gern trotzdem an, wir melden uns mit dem Stand.
             </p>
           )}
           {result.status === "belegt" && (
@@ -85,7 +85,7 @@ export function AvailabilityCheck({
           )}
           {result.status === "unbekannt" && (
             <p className="text-stone-600 dark:text-stone-400">
-              Das konnten wir gerade nicht prüfen — {tone === "sie" ? "nutzen Sie" : "nutz"} bitte das Anfrageformular.
+              Das konnten wir gerade nicht prüfen. {tone === "sie" ? "Nutzen Sie" : "Nutz"} bitte das Anfrageformular.
             </p>
           )}
         </div>

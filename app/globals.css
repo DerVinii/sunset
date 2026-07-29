@@ -17,7 +17,7 @@
   --primary: #1c1917; /* warmes Premium-Schwarz */
   --accent: #ea580c; /* sunset orange-600 */
   --accent-warm: #f59e0b; /* amber-500 */
-  --accent-deep: #be123c; /* rose-700 — Sonnenuntergangs-Tiefe */
+  --accent-deep: #be123c; /* rose-700, Sonnenuntergangs-Tiefe */
   --gold: #a16207; /* Premium-Gold, WCAG-geprüft */
   --sunset-gradient: linear-gradient(115deg, #f59e0b 0%, #ea580c 45%, #be123c 100%);
 }
@@ -88,7 +88,7 @@ body {
   background: var(--sunset-gradient);
 }
 
-/* Scroll-World-Theme (Engine-Variablen — Seite gewinnt über @layer sw) */
+/* Scroll-World-Theme (Engine-Variablen, Seite gewinnt über @layer sw) */
 .sw-root {
   --sw-bg: #f7efe3; /* = Szenen-Hintergrund der Diorama-Stills (nahtlose Poster) */
   --sw-ink: #1c1917;
@@ -98,7 +98,7 @@ body {
   --sw-font-body: var(--font-geist-sans), system-ui, sans-serif;
 }
 
-/* Unter lg blendet die mobile Aktionsleiste (sticky-bar.tsx) unten ein — Text und
+/* Unter lg blendet die mobile Aktionsleiste (sticky-bar.tsx) unten ein. Text und
    Scroll-Hinweis der Welt müssen darüber bleiben, sonst liegen sie dahinter. */
 @media (max-width: 1023px) {
   .sw-root .sw-copy {
@@ -110,7 +110,7 @@ body {
 }
 
 /* Auf dem Handy ist zwischen Text und Aktionsleiste kein Platz mehr für den
-   Scroll-Hinweis — dort wird ohnehin von selbst gewischt. Überschrift etwas kleiner,
+   Scroll-Hinweis. Dort wird ohnehin von selbst gewischt. Überschrift etwas kleiner,
    damit lange Wörter nicht bis an den Rand stoßen. */
 @media (max-width: 860px) {
   .sw-root .sw-hint {

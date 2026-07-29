@@ -6,8 +6,8 @@ import { BudgetRechner } from "@/components/budget-rechner";
 import { DiyRechner } from "@/components/diy-rechner";
 
 export const metadata: Metadata = {
-  title: `Preise & Budget-Rechner — Feiern in ${site.region}`,
-  description: `Alle Preise auf einen Blick: Location ab [X] €, Catering ab [25] €/Person, Bierwagen ab [250] €/Tag. Budget-Rechner: dein Richtpreis in 60 Sekunden — keine versteckten Kosten.`,
+  title: `Preise & Budget-Rechner, Feiern in ${site.region}`,
+  description: `Alle Preise auf einen Blick: Location ab [X] €, Catering ab [25] €/Person, Bierwagen ab [250] €/Tag. Budget-Rechner: dein Richtpreis in 60 Sekunden, keine versteckten Kosten.`,
 };
 
 export default function PreisePage() {
@@ -16,7 +16,7 @@ export default function PreisePage() {
       <div className="border-b border-stone-200 bg-gradient-to-b from-stone-50 to-stone-50 dark:border-stone-800 dark:from-stone-900 dark:to-stone-950">
         <Container className="py-14 sm:py-20">
           <h1 className="font-display max-w-3xl text-3xl font-semibold tracking-tight sm:text-5xl">
-            Unsere Preise — offen und ehrlich.
+            Unsere Preise, offen und ehrlich.
           </h1>
           <p className="mt-3 max-w-2xl text-lg text-stone-600 dark:text-stone-300">
             Kein „Preis auf Anfrage&quot;. {site.priceLogic.sie}
@@ -43,7 +43,7 @@ export default function PreisePage() {
                 ["Partyservice-Buffet", "ab [X] € / Person", <Link key="p" href="/partyservice" className="underline">Partyservice</Link>],
                 ["Bierwagen", "Werktag ab [250] € · Wochenende ab [420] €", <Link key="b" href="/mieten" className="underline">Verleih</Link>],
                 ["Bierzeltgarnitur", "[15] € / Tag", <Link key="g" href="/mieten" className="underline">Verleih</Link>],
-                ["Eventplanung", "Pauschale ab [500] € — bei Komplettpaketen inklusive", <Link key="e" href="/eventservice" className="underline">Eventservice</Link>],
+                ["Eventplanung", "Pauschale ab [500] €, bei Komplettpaketen inklusive", <Link key="e" href="/eventservice" className="underline">Eventservice</Link>],
                 ["Firmenfeier-Pakete (B2B)", "ab [39] € / Person netto", <Link key="f" href="/firmenfeier" className="underline">B2B-Seite (netto + brutto)</Link>],
                 ["Hochzeit (80 Gäste)", "ab [9.400] €", <Link key="h" href="/hochzeit" className="underline">Hochzeit</Link>],
               ].map(([l, p, d], i) => (
@@ -58,13 +58,13 @@ export default function PreisePage() {
         </div>
         <p className="mt-3 text-xs text-stone-500">
           B2C-Preise brutto inkl. MwSt. (PAngV) · B2B-Angaben netto zzgl. gesetzl. MwSt. mit Brutto-Zweitausweis ·
-          Lieferzonen: {site.deliveryZones.map((z) => `Zone ${z.zone} (${z.range}) ${z.price} €`).join(" · ")} — Anlieferung und Abholung inklusive.
+          Lieferzonen: {site.deliveryZones.map((z) => `Zone ${z.zone} (${z.range}) ${z.price} €`).join(" · ")}, Anlieferung und Abholung inklusive.
         </p>
       </Section>
 
       <Section id="rechner" className="bg-stone-50 dark:bg-stone-900/40">
         <H2>Budget-Rechner: dein Richtpreis in 60 Sekunden</H2>
-        <Lead>Alle Pflicht-Nebenkosten sind schon eingerechnet — keine versteckten Kosten.</Lead>
+        <Lead>Alle Pflicht-Nebenkosten sind schon eingerechnet, keine versteckten Kosten.</Lead>
         <div className="mt-6">
           <BudgetRechner />
         </div>

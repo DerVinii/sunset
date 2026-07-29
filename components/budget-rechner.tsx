@@ -87,7 +87,7 @@ export function BudgetRechner() {
           />
         </label>
         <label className="block text-sm font-medium">
-          PLZ (optional — für echte Lieferkosten)
+          PLZ (optional, für echte Lieferkosten)
           <input
             type="text"
             inputMode="numeric"
@@ -107,7 +107,7 @@ export function BudgetRechner() {
           <p className="mt-1 text-xs text-stone-500">
             {zone
               ? `Lieferung Zone ${zone}: ${fmt(lieferung)} (echte Zonenpauschale)`
-              : `Gerechnet mit Zone A (${zoneA.range}): ${fmt(zoneA.price)} — Zone B +${
+              : `Gerechnet mit Zone A (${zoneA.range}): ${fmt(zoneA.price)}, Zone B +${
                   site.deliveryZones[1].price - zoneA.price
                 } €, Zone C +${site.deliveryZones[2].price - zoneA.price} €`}
           </p>
@@ -116,7 +116,7 @@ export function BudgetRechner() {
           <div className="rounded-lg border border-emerald-200 bg-emerald-50 p-3 text-sm dark:border-emerald-900 dark:bg-emerald-950/40">
             <p className="font-semibold text-emerald-900 dark:text-emerald-200">Im Richtbudget enthalten:</p>
             <p className="mt-1 text-emerald-900/85 dark:text-emerald-100/85">
-              Essen &amp; Getränke, Service, Raum/Equipment-Grundausstattung — und alle Pflicht-Nebenkosten
+              Essen &amp; Getränke, Service, Raum/Equipment-Grundausstattung, und alle Pflicht-Nebenkosten
               (Lieferung, Endreinigung) schon eingerechnet.
             </p>
           </div>
@@ -135,7 +135,7 @@ export function BudgetRechner() {
         Dieses Richtbudget als unverbindliches Angebot anfragen
       </a>
       <p className="mt-3 text-xs text-stone-500">
-        Richtpreise zur Orientierung — dein Angebot enthält einen verbindlichen Festpreis. Keine Nachberechnungen.
+        Richtpreise zur Orientierung. Dein Angebot enthält einen verbindlichen Festpreis. Keine Nachberechnungen.
       </p>
     </div>
   );

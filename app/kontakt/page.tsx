@@ -6,7 +6,7 @@ import { InquiryForm } from "@/components/inquiry-form";
 import { WhatsAppButton } from "@/components/whatsapp-button";
 
 export const metadata: Metadata = {
-  title: `Kontakt — ${site.name} in ${site.region}`,
+  title: `Kontakt: ${site.name} in ${site.region}`,
   description: `Kontakt zu ${site.name}: Formular, Telefon (${site.phoneHours}), WhatsApp. Antwort bis zum nächsten Werktag, 12:00 Uhr. Express-Verfügbarkeits-Check für Ihren Wunschtermin.`,
 };
 
@@ -17,7 +17,7 @@ export default function KontaktPage() {
         <Container className="py-14 sm:py-20">
           <h1 className="font-display max-w-3xl text-3xl font-semibold tracking-tight sm:text-5xl">So erreichen Sie uns.</h1>
           <p className="mt-3 max-w-2xl text-lg text-stone-600 dark:text-stone-300">
-            {site.responsePromise.sie} Am Wochenende sind wir oft selbst auf Events — Ihre Anfrage geht trotzdem sofort
+            {site.responsePromise.sie} Am Wochenende sind wir oft selbst auf Events. Ihre Anfrage geht trotzdem sofort
             bei uns ein.
           </p>
         </Container>
@@ -31,7 +31,7 @@ export default function KontaktPage() {
               {site.phoneDisplay}
             </a>
             <p className="mt-1 text-xs text-stone-500">
-              {site.phoneHours} persönlich. Außerhalb: Mailbox — wir rufen bis zum nächsten Werktag, 12:00 Uhr zurück.
+              {site.phoneHours} persönlich. Außerhalb: Mailbox. Wir rufen bis zum nächsten Werktag, 12:00 Uhr zurück.
             </p>
           </div>
           <div id="whatsapp" className="rounded-xl border border-stone-200 p-5 dark:border-stone-800">
@@ -40,7 +40,7 @@ export default function KontaktPage() {
               <WhatsAppButton />
             </div>
             <p className="mt-2 text-xs text-stone-500">
-              Für Kurzfragen — auch abends. Antwort spätestens am nächsten Werktag bis 12:00 Uhr.
+              Für Kurzfragen, auch abends. Antwort spätestens am nächsten Werktag bis 12:00 Uhr.
             </p>
           </div>
           <div className="rounded-xl border border-stone-200 p-5 dark:border-stone-800">
@@ -59,7 +59,7 @@ export default function KontaktPage() {
 
       <Section id="termincheck" className="bg-stone-50 dark:bg-stone-900/40">
         <H2>Express-Verfügbarkeits-Check</H2>
-        <Lead>Wunschtermin eingeben — Sie sehen sofort, ob unsere Location frei ist.</Lead>
+        <Lead>Wunschtermin eingeben. Sie sehen sofort, ob unsere Location frei ist.</Lead>
         <div className="mt-6 max-w-xl">
           <AvailabilityCheck calendar="location" labelSubject="Unsere Location" tone="sie" ctaTargetId="anfrage" />
         </div>

@@ -32,7 +32,7 @@ export default function ImpressumPage() {
         Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV: [NAME, ANSCHRIFT]
       </p>
       <p>
-        [WEITERE PFLICHTANGABEN JE NACH RECHTSFORM — z. B. Registereintrag, Aufsichtsbehörde für Gaststättenbetrieb.
+        [WEITERE PFLICHTANGABEN JE NACH RECHTSFORM, z. B. Registereintrag, Aufsichtsbehörde für Gaststättenbetrieb.
         Vor Launch rechtlich prüfen lassen.]
       </p>
       <h2>Streitschlichtung</h2>

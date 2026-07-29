@@ -1,6 +1,6 @@
 /**
  * Zentrale Site-Konfiguration.
- * Arbeitsmarke "Sunset Events" — Umbenennung = nur diese Datei ändern.
+ * Arbeitsmarke "Sunset Events": Umbenennung = nur diese Datei ändern.
  * [PLATZHALTER] werden vom Unternehmer geliefert (siehe website-plan.md Kap. 10).
  */
 
@@ -30,8 +30,8 @@ export const site = {
     duSingular: "Dein Angebot bis zum nächsten Werktag, 12:00 Uhr.",
   },
   priceLogic: {
-    sie: "Online sehen Sie Richtpreise zur Orientierung. Ihr Angebot enthält einen verbindlichen Festpreis — danach keine Nachberechnungen.",
-    du: "Online seht ihr Richtpreise zur Orientierung. Euer Angebot enthält einen verbindlichen Festpreis — danach keine Nachberechnungen.",
+    sie: "Online sehen Sie Richtpreise zur Orientierung. Ihr Angebot enthält einen verbindlichen Festpreis, danach keine Nachberechnungen.",
+    du: "Online seht ihr Richtpreise zur Orientierung. Euer Angebot enthält einen verbindlichen Festpreis, danach keine Nachberechnungen.",
   },
   serviceAreas: {
     location: { radiusKm: 25, label: "Location: 0–25 km" },

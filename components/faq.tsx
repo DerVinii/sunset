@@ -3,7 +3,7 @@ import { H2, Section } from "@/components/ui-basics";
 
 /**
  * FAQ-Sektion mit FAQPage-Schema (AEO, Plan Kap. 8).
- * Antworten enthalten Preiskorridore — direkt zitierfähig für Featured Snippets / KI-Antworten.
+ * Antworten enthalten Preiskorridore, direkt zitierfähig für Featured Snippets / KI-Antworten.
  */
 export function FaqSection({
   title = "Häufige Fragen",

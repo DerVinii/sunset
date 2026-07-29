@@ -20,13 +20,13 @@ const fraunces = Fraunces({
 export const metadata: Metadata = {
   metadataBase: new URL(site.domain),
   title: {
-    default: `${site.name} — Location, Catering & Equipment in ${site.region}`,
+    default: `${site.name}: Location, Catering & Equipment in ${site.region}`,
     template: `%s | ${site.name}`,
   },
-  description: `Feiern in ${site.region}: Eventlocation, Catering & Partyservice, Bierwagen- und Equipment-Verleih, Eventplanung — alles aus einer Hand. Klare Preise, Angebot bis zum nächsten Werktag 12 Uhr.`,
+  description: `Feiern in ${site.region}: Eventlocation, Catering & Partyservice, Bierwagen- und Equipment-Verleih, Eventplanung, alles aus einer Hand. Klare Preise, Angebot bis zum nächsten Werktag 12 Uhr.`,
 };
 
-/** LocalBusiness-Schema (Plan Kap. 8) — wichtigstes Signal für Local Pack & AEO. */
+/** LocalBusiness-Schema (Plan Kap. 8), wichtigstes Signal für Local Pack & AEO. */
 const localBusinessJsonLd = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",

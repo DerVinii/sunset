@@ -8,7 +8,7 @@ import { faqB2b } from "@/lib/faq-data";
 import { B2bBudgetRechner } from "./budget-rechner";
 
 export const metadata: Metadata = {
-  title: `Firmenfeier in ${site.region} — Location, Catering & Service aus einer Hand`,
+  title: `Firmenfeier in ${site.region}, Location, Catering & Service aus einer Hand`,
   description: `Firmenfeiern für 20–150 Personen in ${site.region}: Pakete passend zum 110-€-Freibetrag (§ 19 EStG), netto + brutto, Angebot bis zum nächsten Werktag 12 Uhr. Weiterleitbares PDF für Ihre Geschäftsführung.`,
 };
 
@@ -18,21 +18,21 @@ const pakete = [
     name: "Sommerfest-Paket",
     netto: "[39] € / Person netto",
     brutto: "[46,41] € / Person brutto",
-    allIn: "All-in brutto pro Person: [62] € — alles, was in die 110 € zählt",
+    allIn: "All-in brutto pro Person: [62] €, alles, was in die 110 € zählt",
     inklusive: ["Raum & Außenbereich", "BBQ-Buffet", "Getränke 4 Std.", "Service-Personal", "Grundtechnik"],
   },
   {
     name: "Weihnachtsfeier-Paket",
     netto: "[49] € / Person netto",
     brutto: "[58,31] € / Person brutto",
-    allIn: "All-in brutto pro Person: [78] € — alles, was in die 110 € zählt",
+    allIn: "All-in brutto pro Person: [78] €, alles, was in die 110 € zählt",
     inklusive: ["Festlich eingedeckter Saal", "3-Gang-Buffet oder Menü", "Getränke 5 Std.", "Service-Personal", "Licht & Ton"],
   },
   {
     name: "Premium-Paket",
     netto: "[69] € / Person netto",
     brutto: "[82,11] € / Person brutto",
-    allIn: "All-in brutto pro Person: [105] € — knapp unter der 110-€-Grenze",
+    allIn: "All-in brutto pro Person: [105] €, knapp unter der 110-€-Grenze",
     inklusive: ["Exklusive Raumnutzung", "Erweitertes Menü", "Getränke bis Ende", "Eventleitung vor Ort", "Deko-Paket"],
   },
 ];
@@ -44,7 +44,7 @@ export default function FirmenfeierPage() {
       <div className="border-b border-stone-200 bg-gradient-to-b from-stone-50 to-stone-50 dark:border-stone-800 dark:from-stone-900 dark:to-stone-950">
         <Container className="py-14 sm:py-20">
           <h1 className="font-display max-w-3xl text-3xl font-semibold tracking-tight sm:text-5xl">
-            Firmenfeiern in {site.region} — Location, Catering &amp; Service aus einer Hand.
+            Firmenfeiern in {site.region}, Location, Catering &amp; Service aus einer Hand.
           </h1>
           <p className="mt-3 text-lg font-medium">
             Platz für bis zu [X] Personen bestuhlt / [Y] Personen beim Stehempfang.
@@ -54,16 +54,16 @@ export default function FirmenfeierPage() {
             <a href="/kontakt" className="underline">Anfahrt</a>
           </p>
           <p className="mt-3 text-sm text-stone-600 dark:text-stone-400">
-            [NAME], [X] Jahre Gastronomie &amp; Events — Ihre feste Ansprechpartnerin.
+            [NAME], [X] Jahre Gastronomie &amp; Events, Ihre feste Ansprechpartnerin.
           </p>
           <div className="mt-5 flex flex-wrap gap-2">
             <Badge>Kalkuliert für den 110-€-Freibetrag (§ 19 EStG)</Badge>
             <Badge>Angebot bis zum nächsten Werktag, 12:00 Uhr</Badge>
           </div>
 
-          {/* Raumvisualisierungen: [3D-RENDERINGS] — ehrlich gelabelt */}
+          {/* Raumvisualisierungen: [3D-RENDERINGS], ehrlich gelabelt */}
           <div className="mt-8 grid gap-4 sm:grid-cols-3">
-            {["Saal — Bankett-Bestuhlung", "Saal — Stehempfang", "Außenbereich"].map((label) => (
+            {["Saal, Bankett-Bestuhlung", "Saal, Stehempfang", "Außenbereich"].map((label) => (
               <div
                 key={label}
                 className="flex aspect-video items-center justify-center rounded-xl border border-dashed border-stone-300 bg-stone-100 text-center text-sm text-stone-500 dark:border-stone-700 dark:bg-stone-900"
@@ -75,7 +75,7 @@ export default function FirmenfeierPage() {
             ))}
           </div>
 
-          {/* Termin-Check above the fold — Terminfrage vor Preisfrage */}
+          {/* Termin-Check above the fold, Terminfrage vor Preisfrage */}
           <div id="termincheck" className="mt-8 max-w-xl scroll-mt-24">
             <p className="mb-2 font-semibold">Ist Ihr Wunschtermin frei? Gerade Dezember-Termine sind schnell vergeben.</p>
             <AvailabilityCheck calendar="location" labelSubject="Unsere Location" tone="sie" ctaTargetId="anfrage" />
@@ -120,12 +120,12 @@ export default function FirmenfeierPage() {
           <div className="rounded-xl border border-stone-200 p-6 dark:border-stone-800">
             <p className="font-bold">Was zählt in die 110 €?</p>
             <p className="mt-2 text-sm text-stone-700 dark:text-stone-300">
-              Alle Kosten der Feier brutto — auch Raum, Deko und Service — geteilt durch die anwesenden Teilnehmer.
+              Alle Kosten der Feier brutto, auch Raum, Deko und Service, geteilt durch die anwesenden Teilnehmer.
               Begleitpersonen zählen zum jeweiligen Mitarbeiter. Bis 110 € pro Person bleibt die Feier steuerfrei;
               nur der Betrag darüber wird versteuert.
             </p>
             <p className="mt-2 text-xs text-stone-500">
-              Hinweis: Das ist keine Steuerberatung — Details klärt Ihre Buchhaltung.
+              Hinweis: Das ist keine Steuerberatung. Details klärt Ihre Buchhaltung.
             </p>
             <p className="mt-3 text-sm text-stone-700 dark:text-stone-300">
               Ihre Rechnung kommt mit getrennt ausgewiesener Umsatzsteuer: Speisen (7 %/19 %) und Getränke/Service (19 %).
@@ -134,12 +134,12 @@ export default function FirmenfeierPage() {
           <div className="rounded-xl border border-stone-200 p-6 dark:border-stone-800">
             <p className="font-bold">So läuft die Zahlung</p>
             <ul className="mt-2 space-y-1 text-sm text-stone-700 dark:text-stone-300">
-              <li>· Anzahlung: [X] % — bzw. keine Anzahlung bis [BETRAG] € [BESTÄTIGEN]</li>
+              <li>· Anzahlung: [X] %, bzw. keine Anzahlung bis [BETRAG] € [BESTÄTIGEN]</li>
               <li>· Restzahlung bequem auf Rechnung, [Y] Tage nach dem Event [BESTÄTIGEN]</li>
               <li>· Zahlungsziel: [Z] Tage</li>
             </ul>
             <p className="mt-3 text-sm text-stone-700 dark:text-stone-300">
-              Stornobedingungen: fair gestaffelt — [STORNOSTAFFEL], transparent im Angebot.
+              Stornobedingungen: fair gestaffelt, [STORNOSTAFFEL], transparent im Angebot.
             </p>
           </div>
         </div>
@@ -156,7 +156,7 @@ export default function FirmenfeierPage() {
           <div className="rounded-xl border border-stone-200 bg-white p-6 dark:border-stone-800 dark:bg-stone-900">
             <p className="font-bold">Event-Katalog für Ihre Geschäftsführung</p>
             <p className="mt-2 text-sm text-stone-600 dark:text-stone-400">
-              Alle Pakete, Preise (netto/brutto), Inklusivleistungen und Stornobedingungen als druckfähiges PDF —
+              Alle Pakete, Preise (netto/brutto), Inklusivleistungen und Stornobedingungen als druckfähiges PDF,
               ohne Anmeldung, direkt weiterleitbar.
             </p>
             <a

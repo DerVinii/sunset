@@ -4,18 +4,18 @@ import path from "path";
 
 /**
  * Verfügbarkeits-Datenquelle (Plan Kap. 4):
- * Zwei manuell gepflegte Pflicht-Kalender — Location (Einzelabfrage überall)
+ * Zwei manuell gepflegte Pflicht-Kalender: Location (Einzelabfrage überall)
  * und Bierwagen (Engpass-Gerät, Tages-Ebene).
  *
  * Status-Logik (kollisionssicher):
  * - "belegt": vom Betreiber gepflegt.
  * - "vorgemerkt": vom System geschrieben, sobald eine Vormerkungs-Zusage ausgespielt
  *   wurde (Vormerkungs-Rückschreibung, Plan Kap. 4). Wird im Checker wie
- *   "auf Anfrage" behandelt — nie als "frei" an einen zweiten Anfrager.
+ *   "auf Anfrage" behandelt, nie als "frei" an einen zweiten Anfrager.
  *
  * Launch-Version: einfache JSON-Datei (vom Betreiber ohne Technik-Kenntnisse pflegbar).
- * Hinweis Produktion/Vercel: Das Dateisystem ist dort nicht dauerhaft beschreibbar —
- * die Rückschreibung braucht in Phase 2 einen kleinen Datenspeicher (z. B. Vercel KV).
+ * Hinweis Produktion/Vercel: Das Dateisystem ist dort nicht dauerhaft beschreibbar.
+ * Die Rückschreibung braucht in Phase 2 einen kleinen Datenspeicher (z. B. Vercel KV).
  * Struktur und Logik bleiben identisch.
  */
 
@@ -65,8 +65,8 @@ export async function checkAvailability(
 /**
  * Vormerkungs-Rückschreibung: markiert ein Datum als "vorgemerkt", damit der
  * Termin-Checker es keinem zweiten Anfrager als frei anzeigt.
- * Gibt false zurück, wenn nicht geschrieben werden konnte (z. B. read-only FS) —
- * der Aufrufer spielt dann KEINE Vormerkungs-Zusage aus (Regel: nie blind zusagen).
+ * Gibt false zurück, wenn nicht geschrieben werden konnte (z. B. read-only FS).
+ * Der Aufrufer spielt dann KEINE Vormerkungs-Zusage aus (Regel: nie blind zusagen).
  */
 export async function markHold(calendar: CalendarKey, isoDate: string): Promise<boolean> {
   try {

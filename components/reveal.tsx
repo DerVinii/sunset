@@ -5,7 +5,7 @@ import type { ReactNode } from "react";
 
 /**
  * Sanfte Scroll-Reveals (Schritt 5): fade-up beim Eintritt in den Viewport.
- * 250 ms, dezenter Versatz — Motion mit Bedeutung, keine Spielerei.
+ * 250 ms, dezenter Versatz, Motion mit Bedeutung, keine Spielerei.
  * Respektiert prefers-reduced-motion automatisch.
  */
 export function Reveal({

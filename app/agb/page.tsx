@@ -20,7 +20,7 @@ export default function AgbPage() {
         <li>Anzahlungsregelungen (B2B: [X] % / Rechnung; Hochzeit: [X] %, Rest [Y] Tage vorher; Equipment: [REGELUNG])</li>
         <li>Kautionen (Location [BETRAG] €, Equipment [BETRAG] €) und Rückzahlung binnen 7 Tagen</li>
         <li>Haftung (Veranstalter haftet für Gäste-Schäden; Betriebshaftpflicht des Anbieters)</li>
-        <li>Bruch/Verlust zum Wiederbeschaffungswert; Reinigungsregelung (speiserein / Spülpauschale — EINE Variante)</li>
+        <li>Bruch/Verlust zum Wiederbeschaffungswert; Reinigungsregelung (speiserein / Spülpauschale, EINE Variante)</li>
         <li>Verlängerungs-Konditionen nach 24 Uhr (Service €/h, Getränke €/Person)</li>
       </ul>
     </Container>

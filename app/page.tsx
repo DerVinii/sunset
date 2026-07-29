@@ -9,7 +9,7 @@ import { ScrollWorld } from "@/components/scroll-world";
 import { Reveal, RevealItem, RevealStagger } from "@/components/reveal";
 
 export const metadata: Metadata = {
-  title: `Feiern in ${site.region} — Location, Catering & Equipment aus einer Hand`,
+  title: `Feiern in ${site.region}: Location, Catering & Equipment aus einer Hand`,
   description: `Eventlocation, Catering, Bierwagen & Equipment und Eventplanung in ${site.region}. Klare Preise, Angebot bis zum nächsten Werktag 12 Uhr, Festpreis im Angebot.`,
 };
 
@@ -17,23 +17,23 @@ const einstiege = [
   {
     href: "/firmenfeier",
     title: "Ich plane eine Firmenfeier",
-    text: "Komplett organisiert und budgetsicher — Pakete passend zum 110-€-Freibetrag.",
+    text: "Komplett organisiert und budgetsicher, Pakete passend zum 110-€-Freibetrag.",
   },
   {
     href: "/hochzeit",
     title: "Wir planen unsere Hochzeit",
-    text: "Ein Ort, ein Team, ein Festpreis — mit Termin-Check und Probeessen.",
+    text: "Ein Ort, ein Team, ein Festpreis, mit Termin-Check und Probeessen.",
   },
   {
     href: "/mieten",
     title: "Ich miete Equipment / Bierwagen",
-    text: "Klare Tagespreise, geliefert und aufgebaut — oder zum Selbstabholen.",
+    text: "Klare Tagespreise, geliefert und aufgebaut, oder zum Selbstabholen.",
   },
 ];
 
 const saeulen = [
   { href: "/location", title: "Location & Räume", text: "Eventlocation in [ORT] mit Platz für [30]–[120] Gäste.", preis: "Miete ab [X] €" },
-  { href: "/catering", title: "Catering & Partyservice", text: "Vom Buffet bis zum Foodtruck — für Firmen und Familien.", preis: "Buffet ab [25] €/Person" },
+  { href: "/catering", title: "Catering & Partyservice", text: "Vom Buffet bis zum Foodtruck, für Firmen und Familien.", preis: "Buffet ab [25] €/Person" },
   { href: "/mieten", title: "Equipment & Bierwagen", text: "Bierwagen, Zelte, Garnituren, Zapfanlagen und mehr.", preis: "Bierwagen ab [250] €/Tag" },
   { href: "/eventservice", title: "Eventplanung & Service", text: "Planung, Personal und Eventleitung vor Ort.", preis: "Pauschale ab [500] €" },
 ];
@@ -41,7 +41,7 @@ const saeulen = [
 export default function Home() {
   return (
     <>
-      {/* Scroll-World "Ein Tag mit Sunset Events" — Scroll scrubbt die Kamerafahrt */}
+      {/* Scroll-World "Ein Tag mit Sunset Events". Scroll scrubbt die Kamerafahrt */}
       <ScrollWorld />
 
       {/* Weicher Übergang vom Creme der Welt in die Seitenfläche (auch im Dunkelmodus) */}
@@ -54,15 +54,15 @@ export default function Home() {
             {site.name} · {site.region}
           </p>
           <h1 className="font-display mt-3 max-w-3xl text-3xl font-semibold leading-tight tracking-tight sm:text-5xl">
-            Ihr Event — <span className="text-sunset">ein Ansprechpartner</span>, klare Preise, null Stress.
+            Ihr Event, <span className="text-sunset">ein Ansprechpartner</span>, klare Preise, null Stress.
           </h1>
           <p className="mt-4 max-w-2xl text-lg leading-relaxed text-stone-600 dark:text-stone-300">
-            Location, Catering, Equipment und Organisation aus einer Hand. Wir planen und richten Ihr Event aus —
+            Location, Catering, Equipment und Organisation aus einer Hand. Wir planen und richten Ihr Event aus,
             verlässlich und flexibel.
           </p>
           <div className="mt-6 flex flex-wrap gap-2">
             <Badge>Angebot bis zum nächsten Werktag, 12:00 Uhr</Badge>
-            <Badge>Festpreis im Angebot — keine Nachberechnungen</Badge>
+            <Badge>Festpreis im Angebot, keine Nachberechnungen</Badge>
             <Badge>Alles aus einer Hand</Badge>
           </div>
           <div className="mt-10 grid gap-4 sm:grid-cols-3">
@@ -90,7 +90,7 @@ export default function Home() {
         </Reveal>
         <RevealStagger className="mt-8 grid gap-4 sm:grid-cols-3">
           {[
-            { nr: "01", t: "Anfragen", d: "In 2 Minuten — Wunschtermin, Gästezahl, fertig." },
+            { nr: "01", t: "Anfragen", d: "In 2 Minuten, Wunschtermin, Gästezahl, fertig." },
             { nr: "02", t: "Angebot erhalten", d: "Bis zum nächsten Werktag, 12:00 Uhr. Mit Festpreis." },
             { nr: "03", t: "Entspannt feiern", d: "Wir kümmern uns um Raum, Essen, Technik und Ablauf." },
           ].map((s) => (
@@ -108,10 +108,10 @@ export default function Home() {
       {/* 4 Säulen */}
       <Section className="bg-stone-100/70 dark:bg-stone-900/40">
         <Reveal>
-          <H2>Vier Leistungen — ein Ansprechpartner</H2>
+          <H2>Vier Leistungen, ein Ansprechpartner</H2>
           <Lead>
             Location, Essen, Ausstattung und Organisation kommen bei uns aus einer Hand. Das spart Ihnen Absprachen mit
-            vier verschiedenen Anbietern — und Überraschungen auf der Rechnung.
+            vier verschiedenen Anbietern, und Überraschungen auf der Rechnung.
           </Lead>
         </Reveal>
         <RevealStagger className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -136,7 +136,7 @@ export default function Home() {
           <Reveal>
             <H2>Wer hinter {site.name} steht</H2>
             <Lead>
-              Wir sind [NAMEN DER GRÜNDER] aus [ORT] — mit [X] Jahren Erfahrung in Gastronomie und Events. Bei uns haben
+              Wir sind [NAMEN DER GRÜNDER] aus [ORT], mit [X] Jahren Erfahrung in Gastronomie und Events. Bei uns haben
               Sie eine feste Ansprechperson: vom ersten Anruf bis zum letzten Glas.
             </Lead>
             <ul className="mt-5 space-y-2.5 text-sm text-stone-700 dark:text-stone-300">
@@ -154,7 +154,7 @@ export default function Home() {
             <div className="h-full rounded-2xl bg-stone-950 p-7 text-stone-50">
               <p className="text-sm font-semibold uppercase tracking-wide text-amber-400">Preistransparenz</p>
               <p className="font-display mt-3 text-2xl font-semibold leading-snug">
-                Keine versteckten Nebenkosten — Ihr Richtbudget in 60 Sekunden.
+                Keine versteckten Nebenkosten. Ihr Richtbudget in 60 Sekunden.
               </p>
               <p className="mt-3 text-sm leading-relaxed text-stone-400">{site.priceLogic.sie}</p>
               <div className="mt-5">
@@ -169,7 +169,7 @@ export default function Home() {
       <Section id="termincheck" className="bg-stone-100/70 dark:bg-stone-900/40">
         <Reveal>
           <H2>Ist Ihr Wunschtermin frei?</H2>
-          <Lead>Datum eingeben — Sie sehen sofort, ob unsere Location an Ihrem Tag frei ist.</Lead>
+          <Lead>Datum eingeben. Sie sehen sofort, ob unsere Location an Ihrem Tag frei ist.</Lead>
           <div className="mt-7 max-w-xl">
             <AvailabilityCheck calendar="location" labelSubject="Unsere Location" tone="sie" />
           </div>

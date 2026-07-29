@@ -61,7 +61,7 @@ export function DiyRechner() {
         </div>
       </div>
       <p className="mt-4 text-xs text-stone-500">
-        Beispielrechnung mit Richtwerten — dein Angebot enthält einen verbindlichen Festpreis.
+        Beispielrechnung mit Richtwerten. Dein Angebot enthält einen verbindlichen Festpreis.
       </p>
     </div>
   );

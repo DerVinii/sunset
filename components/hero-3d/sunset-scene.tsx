@@ -9,7 +9,7 @@ import * as THREE from "three";
  * - Glühende Sonne (Radial-Shader) über einem Horizont, sanftes Pulsieren
  * - Treibende warme Lichtpartikel (additiv, langsam)
  * - Dezente Pointer-Parallaxe
- * Bewusst ruhig gehalten — Atmosphäre statt Spielerei. Läuft nur, wenn
+ * Bewusst ruhig gehalten, Atmosphäre statt Spielerei. Läuft nur, wenn
  * prefers-reduced-motion NICHT gesetzt ist (Weiche im Wrapper).
  */
 

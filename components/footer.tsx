@@ -15,7 +15,7 @@ export function Footer() {
           <p className="mt-2 text-sm text-stone-400">
             Telefon: {site.phoneDisplay}
             <br />
-            <span className="text-xs">({site.phoneHours} persönlich — am Wochenende sind wir auf Events)</span>
+            <span className="text-xs">({site.phoneHours} persönlich, am Wochenende sind wir auf Events)</span>
           </p>
         </div>
         <div>

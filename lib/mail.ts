@@ -5,8 +5,8 @@ import path from "path";
 /**
  * Mail-Zustellung (Plan Kap. 11).
  * Produktion: Resend (RESEND_API_KEY als Env-Variable in Vercel setzen).
- * Entwicklung/ohne Key: Anfragen landen als JSON-Dateien in data/inbox/
- * — so ist der komplette Flow ohne externen Dienst testbar.
+ * Entwicklung/ohne Key: Anfragen landen als JSON-Dateien in data/inbox/,
+ * so ist der komplette Flow ohne externen Dienst testbar.
  */
 
 export type MailPayload = {

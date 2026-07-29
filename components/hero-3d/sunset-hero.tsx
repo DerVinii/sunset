@@ -5,7 +5,7 @@ import { useEffect, useState, type ReactNode } from "react";
 
 /**
  * Wrapper für den 3D-Hero:
- * - Canvas wird lazy geladen (kein LCP-Blocker — der Text steht sofort)
+ * - Canvas wird lazy geladen (kein LCP-Blocker, der Text steht sofort)
  * - prefers-reduced-motion oder fehlendes WebGL → statischer Gradient-Fallback
  * - Der CSS-Verlauf liegt IMMER darunter, damit nie ein schwarzes Loch entsteht
  */

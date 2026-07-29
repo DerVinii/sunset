@@ -44,7 +44,7 @@ function confirmationFor(funnel: Funnel): string {
 
 /**
  * Vormerkungs-Regel (Plan Kap. 4, kollisionssicher):
- * Zusage NUR wenn der Kalender frei zeigt UND die Rückschreibung gelingt —
+ * Zusage NUR wenn der Kalender frei zeigt UND die Rückschreibung gelingt,
  * sonst neutrale Eingangs-Bestätigung. B2B spielt keine Vormerkung aus.
  */
 async function holdNoteFor(funnel: Funnel, isoDate: string | undefined): Promise<string | undefined> {
@@ -52,16 +52,16 @@ async function holdNoteFor(funnel: Funnel, isoDate: string | undefined): Promise
   if (funnel === "hochzeit") {
     const check = await checkAvailability("location", isoDate);
     if (check.status === "frei" && (await markHold("location", isoDate))) {
-      return "Euer Wunschtermin ist für euch vorgemerkt. Wir bestätigen bis zum nächsten Werktag, 12:00 Uhr — und halten euch den Termin danach 7 Tage frei, während ihr in Ruhe entscheidet. Kein anderes Paar bekommt ihn in dieser Zeit zugesagt. Anfragen bearbeiten wir in Eingangsreihenfolge.";
+      return "Euer Wunschtermin ist für euch vorgemerkt. Wir bestätigen bis zum nächsten Werktag, 12:00 Uhr, und halten euch den Termin danach 7 Tage frei, während ihr in Ruhe entscheidet. Kein anderes Paar bekommt ihn in dieser Zeit zugesagt. Anfragen bearbeiten wir in Eingangsreihenfolge.";
     }
     return undefined;
   }
   if (funnel === "equipment") {
     const check = await checkAvailability("bierwagen", isoDate);
     if (check.status === "frei" && (await markHold("bierwagen", isoDate))) {
-      return "Dein Wunschtermin ist bis zu unserer Bestätigung (nächster Werktag, 12:00 Uhr) für dich reserviert — Anfragen bearbeiten wir in Eingangsreihenfolge.";
+      return "Dein Wunschtermin ist bis zu unserer Bestätigung (nächster Werktag, 12:00 Uhr) für dich reserviert. Anfragen bearbeiten wir in Eingangsreihenfolge.";
     }
-    return "Deine Anfrage wird in Eingangsreihenfolge bearbeitet — Bestätigung bis zum nächsten Werktag, 12:00 Uhr.";
+    return "Deine Anfrage wird in Eingangsreihenfolge bearbeitet. Bestätigung bis zum nächsten Werktag, 12:00 Uhr.";
   }
   return undefined;
 }
@@ -94,7 +94,7 @@ export async function submitInquiryAction(
   }
 
   const delivery = await deliverToOperator({
-    subject: `[Website] ${funnelLabels[funnel]} — ${name}${date ? ` — ${date}` : ""}`,
+    subject: `[Website] ${funnelLabels[funnel]}, ${name}${date ? `, ${date}` : ""}`,
     text: lines.join("\n"),
     replyTo: email || undefined,
   });

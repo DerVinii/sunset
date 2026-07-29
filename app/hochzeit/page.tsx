@@ -7,7 +7,7 @@ import { FaqSection } from "@/components/faq";
 import { faqHochzeit } from "@/lib/faq-data";
 
 export const metadata: Metadata = {
-  title: `Hochzeitslocation in ${site.region} — ein Ort, ein Team, ein Festpreis`,
+  title: `Hochzeitslocation in ${site.region}, ein Ort, ein Team, ein Festpreis`,
   description: `Heiraten in ${site.region}: Location, Catering, Deko und Service aus einer Hand. Termin-Check in 10 Sekunden, transparente Beispielpreise, Probeessen inklusive.`,
 };
 
@@ -18,13 +18,13 @@ export default function HochzeitPage() {
       <div className="border-b border-stone-200 bg-gradient-to-b from-rose-50 to-stone-50 dark:border-stone-800 dark:from-stone-900 dark:to-stone-950">
         <Container className="py-14 sm:py-20">
           <h1 className="font-display max-w-3xl text-3xl font-semibold tracking-tight sm:text-5xl">
-            Eure Hochzeit in {site.region} — ein Ort, ein Team, ein Festpreis.
+            Eure Hochzeit in {site.region}, ein Ort, ein Team, ein Festpreis.
           </h1>
           <p className="mt-3 text-lg text-stone-600 dark:text-stone-300">
-            Platz für [MIN]–[MAX] Personen — bequem mit Tanzfläche für 80 Gäste. Eröffnungssaison [JAHR]: viele Wunschtermine noch verfügbar.
+            Platz für [MIN]–[MAX] Personen, bequem mit Tanzfläche für 80 Gäste. Eröffnungssaison [JAHR]: viele Wunschtermine noch verfügbar.
           </p>
 
-          {/* Hero-Visual: gelabeltes 3D-Rendering des echten Saals — KEINE fremden Hochzeitsfotos */}
+          {/* Hero-Visual: gelabeltes 3D-Rendering des echten Saals, KEINE fremden Hochzeitsfotos */}
           <div className="mt-6 flex aspect-[21/9] items-center justify-center rounded-xl border border-dashed border-stone-300 bg-stone-100 text-center text-sm text-stone-500 dark:border-stone-700 dark:bg-stone-900">
             3D-Visualisierung: Saal in Hochzeitsdeko (Tag/Nacht-Szenen) [RENDERING]
           </div>
@@ -67,7 +67,7 @@ export default function HochzeitPage() {
               </tbody>
             </table>
             <p className="p-3 text-xs text-stone-500">
-              * Beispiel gerechnet bis 24:00 Uhr — inkl. Raum, Buffet, Getränken, Service und Grunddeko.
+              * Beispiel gerechnet bis 24:00 Uhr, inkl. Raum, Buffet, Getränken, Service und Grunddeko.
               Jede weitere Stunde: Service [X] €/h + Getränke ca. [Y] € pro Person. [VERLÄNGERUNGS-KONDITIONEN]
             </p>
           </div>
@@ -100,26 +100,26 @@ export default function HochzeitPage() {
 
       {/* Risiko-Umkehr + Garantien */}
       <Section className="bg-stone-50 dark:bg-stone-900/40">
-        <H2>Warum ihr bei uns sicher seid — obwohl wir neu sind</H2>
+        <H2>Warum ihr bei uns sicher seid, obwohl wir neu sind</H2>
         <div className="mt-6 grid gap-4 lg:grid-cols-3">
           <GuaranteeBox title="Probeessen inklusive">
-            Bei eurer Besichtigung probiert ihr euer Menü vorab — kostenlos. [PROBEESSEN BESTÄTIGEN]
+            Bei eurer Besichtigung probiert ihr euer Menü vorab, kostenlos. [PROBEESSEN BESTÄTIGEN]
             Dazu unser Eröffnungsvorteil: [ERÖFFNUNGSANGEBOT, z. B. Deko-/Licht-Paket gratis gegen Fotoerlaubnis].
           </GuaranteeBox>
           <GuaranteeBox title="Faire Preise, garantiert">
-            [VERSION A: Kein Korkgeld.] [VERSION B: Korkgeld: [X] € pro Flasche — steht genau so auch im Angebot.]
+            [VERSION A: Kein Korkgeld.] [VERSION B: Korkgeld: [X] € pro Flasche. Steht genau so auch im Angebot.]
             Keine versteckten Teller- oder Reinigungsgelder. Service nach 24 Uhr: transparent [SATZ] €/h.
           </GuaranteeBox>
           <GuaranteeBox title="Schlechtwetter-Plan">
             Freie Trauung im Garten geplant? Bei Regen zieht ihr kostenfrei in den Innenbereich
-            (Platz für bis zu [X] Gäste [INNENKAPAZITÄT BESTÄTIGEN]). Ab 22 Uhr feiern wir drinnen weiter — ohne Zeitlimit.
+            (Platz für bis zu [X] Gäste [INNENKAPAZITÄT BESTÄTIGEN]). Ab 22 Uhr feiern wir drinnen weiter, ohne Zeitlimit.
           </GuaranteeBox>
         </div>
 
         <div className="mt-6 rounded-xl border border-stone-200 bg-white p-6 dark:border-stone-800 dark:bg-stone-900">
-          <p className="font-bold">Anzahlung &amp; Storno — fair geregelt</p>
+          <p className="font-bold">Anzahlung &amp; Storno, fair geregelt</p>
           <p className="mt-2 text-sm text-stone-700 dark:text-stone-300">
-            Nur [X] % Anzahlung — den Rest zahlt ihr [Y] Tage vor der Feier. Storno-Staffel: [STAFFEL DES UNTERNEHMERS].
+            Nur [X] % Anzahlung. Den Rest zahlt ihr [Y] Tage vor der Feier. Storno-Staffel: [STAFFEL DES UNTERNEHMERS].
             Alles steht im Vertrag. [ABSICHERUNG DER ANZAHLUNG]
           </p>
         </div>
@@ -132,7 +132,7 @@ export default function HochzeitPage() {
             <H2>Euer Ort zum Feiern</H2>
             <Lead>
               Saal mit Platz für [MIN]–[MAX] Gäste, Garten für die Freie Trauung [BESTÄTIGEN], Tanzfläche,
-              Parkplätze direkt am Haus. Schaut euch im 3D-Rundgang um — mit Bestuhlungsplänen und Licht-Szenen für Tag und Nacht.
+              Parkplätze direkt am Haus. Schaut euch im 3D-Rundgang um, mit Bestuhlungsplänen und Licht-Szenen für Tag und Nacht.
             </Lead>
             <div className="mt-4 flex aspect-video items-center justify-center rounded-xl border border-dashed border-stone-300 bg-stone-100 text-sm text-stone-500 dark:border-stone-700 dark:bg-stone-900">
               Interaktiver 3D-Rundgang [EINBETTUNG]
@@ -141,7 +141,7 @@ export default function HochzeitPage() {
           <div>
             <H2>Eure Ansprechpartnerin</H2>
             <Lead>
-              Ich bin [NAME] — ich begleite euch von der ersten Anfrage bis zum letzten Tanz. Ihr erreicht mich direkt,
+              Ich bin [NAME]. Ich begleite euch von der ersten Anfrage bis zum letzten Tanz. Ihr erreicht mich direkt,
               nicht über eine Hotline. Und weil wir gerade starten: Ihr seid uns nicht Hochzeit Nr. 87 in diesem Jahr.
             </Lead>
             <div className="mt-4 flex aspect-square max-w-[240px] items-center justify-center rounded-xl border border-dashed border-stone-300 bg-stone-100 text-sm text-stone-500 dark:border-stone-700 dark:bg-stone-900">
@@ -155,8 +155,8 @@ export default function HochzeitPage() {
       <Section id="anfrage-sektion" className="bg-stone-50 dark:bg-stone-900/40">
         <H2>Schritt 1: Angebot + Terminvormerkung anfragen</H2>
         <Lead>
-          4 Felder, keine Pflicht-Telefonnummer. Ist euer Termin frei, merken wir ihn nach der Anfrage für euch vor —
-          7 Tage, exklusiv. <strong>Schritt 2</strong> kommt danach: Besichtigung mit Probeessen — im Angebot schlagen
+          4 Felder, keine Pflicht-Telefonnummer. Ist euer Termin frei, merken wir ihn nach der Anfrage für euch vor,
+          7 Tage, exklusiv. <strong>Schritt 2</strong> kommt danach: Besichtigung mit Probeessen. Im Angebot schlagen
           wir euch 3 Termine vor.
         </Lead>
         <div className="mt-6 max-w-2xl">
@@ -169,7 +169,7 @@ export default function HochzeitPage() {
               { name: "email", label: "E-Mail", type: "email", required: true },
               { name: "date", label: "Wunschdatum", type: "date", required: true },
               { name: "gaeste", label: "Gästezahl (ungefähr)", type: "number", required: true },
-              { name: "phone", label: "Telefon (freiwillig — für schnelle Rückfragen)", type: "tel" },
+              { name: "phone", label: "Telefon (freiwillig, für schnelle Rückfragen)", type: "tel" },
               { name: "antwortkanal", label: "Wie dürfen wir antworten? (optional)", type: "select", options: ["E-Mail", "WhatsApp", "Anruf"] },
               { name: "nachricht", label: "Was sollten wir wissen? (optional)", type: "textarea" },
             ]}
@@ -179,8 +179,8 @@ export default function HochzeitPage() {
           Kurze Frage vorab? Schreibt uns per{" "}
           <a href="/kontakt#whatsapp" className="underline">
             WhatsApp
-          </a>{" "}
-          — auch abends vom Sofa.
+          </a>
+          , auch abends vom Sofa.
         </p>
       </Section>
 

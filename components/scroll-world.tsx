@@ -5,7 +5,7 @@ import { mountScrollWorld } from "@/lib/scroll-world/scrub-engine";
 
 /**
  * Scroll-World "Ein Tag mit Sunset Events" (Scroll-World-Skill, Architektur B):
- * Scrollen scrubbt eine durchgehende Kamerafahrt durch 5 Clay-Diorama-Szenen —
+ * Scrollen scrubbt eine durchgehende Kamerafahrt durch 5 Clay-Diorama-Szenen,
  * vom späten Nachmittag (Location) bis Mitternacht (Firmenfeier + CTA).
  *
  * Assets liegen in /public/world/ (Higgsfield, seedance_2_0 in 1080p):
@@ -22,7 +22,7 @@ const worldConfig = {
   brand: null,
   nav: false,
   progress: false, // Fortschritt zeigen die Punkte am rechten Rand
-  hint: "Scrollen — wir fliegen los",
+  hint: "Scrollen. Wir fliegen los",
   atmosphere: true,
   diveScroll: 1.25,
   connScroll: 0.85,
@@ -38,7 +38,7 @@ const worldConfig = {
       accent: "#f59e0b",
       eyebrow: "Später Nachmittag",
       title: "Ein Ort, an dem alles passt.",
-      body: "Unsere Location in [ORT]: Platz für 30 bis 120 Gäste — mit Technik, Tanzfläche und Parkplätzen direkt am Haus.",
+      body: "Unsere Location in [ORT]: Platz für 30 bis 120 Gäste, mit Technik, Tanzfläche und Parkplätzen direkt am Haus.",
       tags: ["Bis [120] Gäste", "Technik inklusive"],
       scroll: 1.5,
       linger: 0.4,
@@ -53,7 +53,7 @@ const worldConfig = {
       accent: "#ea580c",
       eyebrow: "Goldene Stunde",
       title: "Essen, über das man noch lange redet.",
-      body: "Buffet, Menü oder BBQ — frisch aus unserer Küche. Vegetarisch ist immer dabei.",
+      body: "Buffet, Menü oder BBQ, frisch aus unserer Küche. Vegetarisch ist immer dabei.",
       tags: ["Buffet · Menü · BBQ", "ab [25] € pro Person"],
     },
     {
@@ -66,7 +66,7 @@ const worldConfig = {
       accent: "#d97706",
       eyebrow: "Sonnenuntergang",
       title: "Geliefert. Aufgebaut. Eingeschenkt.",
-      body: "Bierwagen, Zapfanlage, Garnituren und Zelte — wir bringen die Party in deinen Garten.",
+      body: "Bierwagen, Zapfanlage, Garnituren und Zelte. Wir bringen die Party in deinen Garten.",
       tags: ["Bierwagen ab [250] €/Tag", "Aufbau inklusive"],
     },
     {
@@ -79,7 +79,7 @@ const worldConfig = {
       accent: "#be123c",
       eyebrow: "Blaue Stunde",
       title: "Euer Tag. Unser Job.",
-      body: "Freie Trauung im Garten, festlicher Saal, ein Festpreis — und ein Probeessen, bevor ihr euch entscheidet.",
+      body: "Freie Trauung im Garten, festlicher Saal, ein Festpreis, und ein Probeessen, bevor ihr euch entscheidet.",
       tags: ["Festpreis im Angebot", "Probeessen inklusive"],
       scroll: 1.5,
       linger: 0.45,
@@ -94,7 +94,7 @@ const worldConfig = {
       accent: "#f59e0b",
       eyebrow: "Mitternacht",
       title: "Feiern, bis der Chef tanzt.",
-      body: "Firmenfeiern komplett organisiert — budgetsicher kalkuliert für den 110-€-Freibetrag. Angebot bis zum nächsten Werktag, 12:00 Uhr.",
+      body: "Firmenfeiern komplett organisiert, budgetsicher kalkuliert für den 110-€-Freibetrag. Angebot bis zum nächsten Werktag, 12:00 Uhr.",
       tags: ["Alles aus einer Hand"],
       scroll: 1.6,
       linger: 0.4,
@@ -106,7 +106,7 @@ const worldConfig = {
   ],
   connectors: ["/world/conn-1.mp4", "/world/conn-2.mp4", "/world/conn-3.mp4", "/world/conn-4.mp4"],
   // Handy-Satz: dieselben Aufnahmen in 720p/15 fps (ffmpeg-Umkodierung der Master,
-  // keine Neugenerierung) — 15 statt 71 MB, damit die Clips unterwegs rechtzeitig da sind.
+  // keine Neugenerierung), 15 statt 71 MB, damit die Clips unterwegs rechtzeitig da sind.
   connectorsMobile: ["/world/conn-1-m.mp4", "/world/conn-2-m.mp4", "/world/conn-3-m.mp4", "/world/conn-4-m.mp4"],
 };
 
@@ -127,7 +127,7 @@ export function ScrollWorld() {
   }, []);
 
   // Der Seiten-Header ist 65 px hoch (h-16 + Trennlinie) und halbtransparent. Die Welt
-  // wird um genau diese Höhe hochgezogen und läuft darunter durch — sonst startete die
+  // wird um genau diese Höhe hochgezogen und läuft darunter durch. Sonst startete die
   // Bühne zu tief und der Scroll-Hinweis am unteren Rand wäre beim Laden abgeschnitten.
   return <div id="welt" ref={ref} className="sw-root -mt-[65px]" />;
 }

@@ -7,12 +7,12 @@ import { FaqSection } from "@/components/faq";
 import { faqCatering } from "@/lib/faq-data";
 
 export const metadata: Metadata = {
-  title: `Partyservice in ${site.region} — Buffet liefern lassen`,
-  description: `Partyservice in ${site.region}: Buffet für Geburtstag, Jubiläum oder Vereinsfest — geliefert oder zum Abholen. Buffet für 50 Gäste ab [PREIS] €, alles inkl. MwSt.`,
+  title: `Partyservice in ${site.region}: Buffet liefern lassen`,
+  description: `Partyservice in ${site.region}: Buffet für Geburtstag, Jubiläum oder Vereinsfest, geliefert oder zum Abholen. Buffet für 50 Gäste ab [PREIS] €, alles inkl. MwSt.`,
 };
 
 /**
- * Säulen-Seite Partyservice (Plan 5.7b) — privat/ländlich, "Du".
+ * Säulen-Seite Partyservice (Plan 5.7b): privat/ländlich, "Du".
  * Bewusst eigene Seite mit eigener Intention (kein Duplicate Content zu /catering).
  */
 export default function PartyservicePage() {
@@ -21,10 +21,10 @@ export default function PartyservicePage() {
       <div className="border-b border-stone-200 bg-gradient-to-b from-amber-50 to-stone-50 dark:border-stone-800 dark:from-stone-900 dark:to-stone-950">
         <Container className="py-14 sm:py-20">
           <h1 className="font-display max-w-3xl text-3xl font-semibold tracking-tight sm:text-5xl">
-            Partyservice in {site.region} — gutes Essen für deine Feier.
+            Partyservice in {site.region}, gutes Essen für deine Feier.
           </h1>
           <p className="mt-3 max-w-2xl text-lg text-stone-600 dark:text-stone-300">
-            Buffet zum Liefern oder Abholen — für Geburtstag, Jubiläum, Vereinsfest oder die Feier im Garten.
+            Buffet zum Liefern oder Abholen, für Geburtstag, Jubiläum, Vereinsfest oder die Feier im Garten.
             Alle Preise inkl. MwSt.
           </p>
         </Container>
@@ -34,8 +34,8 @@ export default function PartyservicePage() {
         <H2>Was auf den Tisch kommt</H2>
         <div className="mt-6 grid gap-4 sm:grid-cols-3">
           {[
-            { t: "Buffet klassisch", p: "ab [X] € / Person", d: "Herzhaft & gutbürgerlich — [BEISPIELGERICHTE]" },
-            { t: "Grillpakete", p: "ab [X] € / Person", d: "Vom Rost — mit Salaten und Beilagen" },
+            { t: "Buffet klassisch", p: "ab [X] € / Person", d: "Herzhaft & gutbürgerlich: [BEISPIELGERICHTE]" },
+            { t: "Grillpakete", p: "ab [X] € / Person", d: "Vom Rost, mit Salaten und Beilagen" },
             { t: "Gartenparty-Komplett", p: "ab [X] €", d: "Essen + Bierwagen + Garnituren, geliefert & aufgebaut" },
           ].map((x) => (
             <div key={x.t} className="rounded-xl border border-stone-200 bg-white p-5 dark:border-stone-800 dark:bg-stone-900">
@@ -46,7 +46,7 @@ export default function PartyservicePage() {
           ))}
         </div>
         <p className="mt-3 text-sm text-stone-600 dark:text-stone-400">
-          Beispiel: Buffet für 50 Gäste ab [PREIS] € — geliefert, warmgehalten, mit Geschirr wenn du willst.
+          Beispiel: Buffet für 50 Gäste ab [PREIS] €, geliefert, warmgehalten, mit Geschirr wenn du willst.
         </p>
       </Section>
 
@@ -54,7 +54,7 @@ export default function PartyservicePage() {
         <H2>Wie viele Getränke brauchst du?</H2>
         <Lead>
           Faustregel für 6 Stunden Feier: 1 bis 1,5 Liter Alkoholfreies plus etwa 1 Liter Bier oder Wein pro Person.
-          Oder du nimmst unsere Getränke-Pauschale — fester Preis pro Kopf, wir kümmern uns um Nachschub und Kühlung.
+          Oder du nimmst unsere Getränke-Pauschale: fester Preis pro Kopf, wir kümmern uns um Nachschub und Kühlung.
         </Lead>
         <p className="mt-4 text-sm">
           Dazu passt: <Link href="/mieten" className="underline">Bierwagen &amp; Zapfanlage mieten</Link> ·{" "}
@@ -81,7 +81,7 @@ export default function PartyservicePage() {
           />
         </div>
         <p className="mt-4 text-sm text-stone-600 dark:text-stone-400">
-          Oder ruf an: {site.phoneDisplay} ({site.phoneHours} persönlich — sonst Mailbox mit Rückruf bis zum nächsten Werktag, 12:00 Uhr).
+          Oder ruf an: {site.phoneDisplay} ({site.phoneHours} persönlich, sonst Mailbox mit Rückruf bis zum nächsten Werktag, 12:00 Uhr).
         </p>
       </Section>
 

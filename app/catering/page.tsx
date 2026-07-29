@@ -7,15 +7,15 @@ import { FaqSection } from "@/components/faq";
 import { faqCatering } from "@/lib/faq-data";
 
 export const metadata: Metadata = {
-  title: `Catering in ${site.region} — für Firmenfeiern & Hochzeiten`,
+  title: `Catering in ${site.region}, für Firmenfeiern & Hochzeiten`,
   description: `Catering in ${site.region} für Firmen und Hochzeiten: Buffet ab [25] €/Person, Menü, BBQ, Getränke-Pauschalen. Netto- und Bruttopreise, Angebot bis zum nächsten Werktag 12 Uhr.`,
 };
 
-/** Säulen-Seite Catering (Plan 5.7a) — B2B & Hochzeit, "Sie". Caterer-Schema. */
+/** Säulen-Seite Catering (Plan 5.7a): B2B & Hochzeit, "Sie". Caterer-Schema. */
 const catererJsonLd = {
   "@context": "https://schema.org",
   "@type": "FoodEstablishment",
-  name: `${site.name} — Catering`,
+  name: `${site.name}: Catering`,
   servesCuisine: "Regional, BBQ, Buffet, Menü",
   telephone: site.phone,
   areaServed: `${site.serviceAreas.catering.label} um ${site.address.city}`,
@@ -27,17 +27,17 @@ export default function CateringPage() {
       <div className="border-b border-stone-200 bg-gradient-to-b from-stone-50 to-stone-50 dark:border-stone-800 dark:from-stone-900 dark:to-stone-950">
         <Container className="py-14 sm:py-20">
           <h1 className="font-display max-w-3xl text-3xl font-semibold tracking-tight sm:text-5xl">
-            Catering in {site.region} — für Firmenfeiern und Hochzeiten.
+            Catering in {site.region}, für Firmenfeiern und Hochzeiten.
           </h1>
           <p className="mt-3 max-w-2xl text-lg text-stone-600 dark:text-stone-300">
-            Vom Buffet bis zum Menü — mit Personal, Getränken und Equipment. Sie feiern, wir liefern und servieren.
+            Vom Buffet bis zum Menü, mit Personal, Getränken und Equipment. Sie feiern, wir liefern und servieren.
           </p>
         </Container>
       </div>
 
       <Section>
         <H2>Formate &amp; Preise</H2>
-        <Lead>Nettopreise zzgl. gesetzl. MwSt. — Bruttowert jeweils daneben. {site.priceLogic.sie}</Lead>
+        <Lead>Nettopreise zzgl. gesetzl. MwSt. Bruttowert jeweils daneben. {site.priceLogic.sie}</Lead>
         <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {[
             { t: "Buffet", p: "ab [25] € netto", b: "[29,75] € brutto / Person", d: "Marktüblich 25–45 €" },
@@ -54,7 +54,7 @@ export default function CateringPage() {
           ))}
         </div>
         <p className="mt-4 text-sm text-stone-600 dark:text-stone-400">
-          Vegetarisch/vegan sind standardmäßig 20–30 % der Speisen — ohne Aufpreis. Weitere Bedürfnisse (glutenfrei,
+          Vegetarisch/vegan sind standardmäßig 20–30 % der Speisen, ohne Aufpreis. Weitere Bedürfnisse (glutenfrei,
           halal) nach Absprache. [BESTÄTIGEN]
         </p>
       </Section>
@@ -63,9 +63,9 @@ export default function CateringPage() {
         <H2>Beispiel-Menüs</H2>
         <div className="mt-6 grid gap-4 lg:grid-cols-3">
           {[
-            { t: "Firmenfeier-Buffet", d: "[MENÜ 1 — KONKRETE GERICHTE DES UNTERNEHMERS]" },
-            { t: "Hochzeits-Menü", d: "[MENÜ 2 — KONKRETE GERICHTE]" },
-            { t: "BBQ / Grill-Buffet", d: "[MENÜ 3 — KONKRETE GERICHTE]" },
+            { t: "Firmenfeier-Buffet", d: "[MENÜ 1: KONKRETE GERICHTE DES UNTERNEHMERS]" },
+            { t: "Hochzeits-Menü", d: "[MENÜ 2: KONKRETE GERICHTE]" },
+            { t: "BBQ / Grill-Buffet", d: "[MENÜ 3: KONKRETE GERICHTE]" },
           ].map((m) => (
             <div key={m.t} className="rounded-xl border border-stone-200 bg-white p-5 dark:border-stone-800 dark:bg-stone-900">
               <p className="font-semibold">{m.t}</p>

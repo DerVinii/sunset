@@ -64,16 +64,16 @@ export function B2bBudgetRechner() {
         </p>
         <p className="text-sm text-stone-600 dark:text-stone-400">{fmt(brutto)} brutto (Catering-Anteil)</p>
         <p className="mt-2 text-sm">
-          All-in brutto pro Person (zählt für die 110-€-Prüfung): <strong>{paket.allInBrutto} €</strong>{" "}
+          All-in brutto pro Person (zählt für die 110-€-Prüfung): <strong>{paket.allInBrutto} €</strong>
           {inFreibetrag ? (
-            <span className="font-medium text-emerald-700 dark:text-emerald-400">— passt in den 110-€-Freibetrag ✓</span>
+            <span className="font-medium text-emerald-700 dark:text-emerald-400">, passt in den 110-€-Freibetrag ✓</span>
           ) : (
-            <span className="font-medium text-amber-700 dark:text-amber-400">— über 110 €: der Mehrbetrag wird versteuert</span>
+            <span className="font-medium text-amber-700 dark:text-amber-400">, über 110 €: der Mehrbetrag wird versteuert</span>
           )}
         </p>
         <p className="mt-2 text-xs text-stone-500">
           Im Richtbudget enthalten: Raum, Buffet, Getränke, Service, Grundtechnik. Kommt je nach Wunsch dazu: DJ,
-          Deko-Upgrades, Programm. Richtpreise zur Orientierung — Ihr Angebot enthält einen verbindlichen Festpreis.
+          Deko-Upgrades, Programm. Richtpreise zur Orientierung. Ihr Angebot enthält einen verbindlichen Festpreis.
         </p>
       </div>
 

@@ -1,7 +1,7 @@
 /**
  * Equipment-Katalog (Plan 5.8). Preise = [PLATZHALTER DES UNTERNEHMERS];
  * Marktkorridore aus dem Research als Startwerte. Beide Tarife gleich groß
- * anzeigen (Werktag/Wochenende) — fast jede private Feier ist samstags.
+ * anzeigen (Werktag/Wochenende). Fast jede private Feier ist samstags.
  */
 
 export type EquipmentItem = {
@@ -22,7 +22,7 @@ export const equipment: EquipmentItem[] = [
     wochenende: 420,
     einheit: "pro Tag / Wochenende (Fr–Mo)",
     hinweis:
-      "Kommt einsatzbereit mit Kühlung & CO2. Fassbier über uns ([SORTEN], 50-l-Fass ab [PREIS] €, nicht angezapfte Fässer nehmen wir zurück) — oder bring dein eigenes Bier mit. Endreinigung von Zapfanlage & Leitungen übernehmen wir. [REGELUNG BESTÄTIGEN]",
+      "Kommt einsatzbereit mit Kühlung & CO2. Fassbier über uns ([SORTEN], 50-l-Fass ab [PREIS] €, nicht angezapfte Fässer nehmen wir zurück), oder bring dein eigenes Bier mit. Endreinigung von Zapfanlage & Leitungen übernehmen wir. [REGELUNG BESTÄTIGEN]",
     maxAnzahl: 1,
   },
   {
@@ -55,7 +55,7 @@ export const equipment: EquipmentItem[] = [
     werktag: 290,
     wochenende: 390,
     einheit: "pro Wochenende inkl. Aufbau",
-    hinweis: "Kostenfrei stornierbar bis [X] Tage vorher — praktisch als Regen-Absicherung.",
+    hinweis: "Kostenfrei stornierbar bis [X] Tage vorher, praktisch als Regen-Absicherung.",
     maxAnzahl: 2,
   },
   {
@@ -72,7 +72,7 @@ export const equipment: EquipmentItem[] = [
     werktag: 12,
     wochenende: 12,
     einheit: "pro Set & Event",
-    hinweis: "Rückgabe speiserein — die Endreinigung übernehmen wir. [REGELUNG]",
+    hinweis: "Rückgabe speiserein. Die Endreinigung übernehmen wir. [REGELUNG]",
     maxAnzahl: 20,
   },
 ];
