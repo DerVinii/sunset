@@ -66,6 +66,25 @@ unterscheiden — geprüft im 390-px-Ausschnitt.
 Ergebnis: Handy-Gewicht 80 MB → 15 MB, alle neun Segmente laufen bei 10 Mbit/s durchgehend
 (auch bei schnellem Scrollen), bei 5 Mbit/s zeigt nur der allererste Clip kurz sein Poster.
 
+## Zwei iOS-Eigenheiten, an denen Szenen sonst auf dem Standbild hängenbleiben
+
+Beide sind in der Engine gelöst; wer sie umbaut, sollte sie kennen:
+
+1. **iOS lädt Videodaten erst bei `play()`.** `preload="auto"` wird ignoriert. Wer das
+   Anstoßen (stummes `play()`→`pause()`) an ein Ereignis wie `loadeddata` hängt, wartet
+   ewig: das Ereignis setzt genau die Daten voraus, die ohne `play()` nie geholt werden.
+   Angestoßen wird deshalb sofort beim Anhängen des Elements — und zusätzlich bei jeder
+   Berührung für alles, was noch keine Daten hat (jedes Wischen beginnt mit `touchstart`,
+   die Seite repariert sich also selbst).
+2. **iOS gibt einer Seite nur wenige gleichzeitige Video-Dekoder.** Sind sie belegt,
+   dekodieren weitere Szenen still und leise gar nicht. Deshalb sind Herunterladen und
+   Abspielen getrennt: die Daten bleiben als Blob liegen, ein `<video>`-Element bekommen
+   aber nur die Szenen rund um die aktuelle (höchstens drei statt neun).
+
+Achtung beim Testen: Playwrights WebKit ist macOS-WebKit und zeigt **keine** dieser beiden
+Eigenheiten — es lädt eifrig vor. Ein grüner WebKit-Lauf beweist hier nichts; er zeigt nur,
+dass nichts anderes kaputt ist. Echte Prüfung nur auf einem iPhone.
+
 NSFW-Fehlalarme (Seedance mag „Hochzeit/Wein/Bett"-Kontexte nicht): 1) neu rollen,
 2) Triggerwörter entfernen + „empty, no people, architectural, tasteful", 3) einzelnen Clip
 auf `kling3_0` mit denselben Frames (Filter anders), 4) Connector-Slot auf `null` (Engine
