@@ -3,7 +3,6 @@ import { Geist, Fraunces } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
-import { StickyBar } from "@/components/sticky-bar";
 import { site } from "@/lib/site";
 
 const geistSans = Geist({
@@ -20,10 +19,10 @@ const fraunces = Fraunces({
 export const metadata: Metadata = {
   metadataBase: new URL(site.domain),
   title: {
-    default: `${site.name}: Eventlocation, Buffet und Verleih in ${site.city}`,
+    default: `${site.name}: Eventagentur in ${site.city}`,
     template: `%s | ${site.name}`,
   },
-  description: `Eventlocation in ${site.city} für rund 100 Gäste, mit Tanzfläche, großem Außenhof und Cocktailwagen. Dazu Buffet-Catering und Equipment zum Mieten.`,
+  description: `Eventagentur in ${site.city}: Firmenfeiern, Tagungen und private Feste mit eigener Location für rund 100 Gäste, Buffet-Catering und Equipment.`,
 };
 
 /** LocalBusiness-Schema. Nur belegte Angaben: ohne Telefon, E-Mail und PLZ. */
@@ -53,7 +52,6 @@ export default function RootLayout({
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
-        <StickyBar />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}

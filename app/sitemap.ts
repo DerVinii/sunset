@@ -1,15 +1,14 @@
 import type { MetadataRoute } from "next";
 import { site } from "@/lib/site";
 
+/* /danke und die Referenz-Beispiele bleiben draußen: noindex-Seiten gehören nicht in die Sitemap. */
 const pfade = [
   "",
-  "/location",
-  "/catering",
-  "/mieten",
-  "/hochzeit",
-  "/firmenfeier",
-  "/private-feier",
+  "/leistungen",
+  "/referenzen",
+  "/ablauf",
   "/ueber-uns",
+  "/faq",
   "/kontakt",
 ];
 

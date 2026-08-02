@@ -43,6 +43,13 @@ export default function DatenschutzPage() {
         </p>
         <p>Wir setzen keine Cookies zu Werbe- oder Analysezwecken ein und binden keine externen Tracking-Dienste ein.</p>
 
+        <h2 id="cookies">Cookie-Einstellungen</h2>
+        <p>
+          Diese Seite setzt derzeit keine Cookies, die eine Einwilligung brauchen. Es gibt deshalb auch nichts
+          einzustellen. Sollten wir künftig Dienste einbinden, die Cookies setzen, etwa eine eingebettete Karte,
+          erscheint an dieser Stelle ein Schalter, mit dem Sie Ihre Einwilligung erteilen und widerrufen können.
+        </p>
+
         <h2>Ihre Rechte</h2>
         <p>
           Sie können Auskunft über Ihre gespeicherten Daten verlangen, deren Berichtigung oder Löschung, die
