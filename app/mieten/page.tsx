@@ -17,9 +17,10 @@ export default function MietenPage() {
       <div className="border-b border-stone-200 bg-gradient-to-b from-stone-50 to-stone-50 dark:border-stone-800 dark:from-stone-900 dark:to-stone-950">
         <Container className="py-14 sm:py-20">
           <h1 className="font-display max-w-3xl text-3xl font-semibold tracking-tight sm:text-5xl">
-            Bierwagen, Zelte &amp; Equipment mieten in {site.region}.
+            Bierwagen, Zelte &amp; Partyspaß mieten in {site.region}.
           </h1>
           <p className="mt-3 max-w-2xl text-lg text-stone-600 dark:text-stone-300">
+            Vom Bierwagen mit Zapfanlage über Zelte und Garnituren bis zu Hüpfburg, Boxautomat und Kickertisch.
             Klare Preise für Werktag und Wochenende. Geliefert, aufgebaut und eingewiesen, oder zum Selbstabholen.
           </p>
 

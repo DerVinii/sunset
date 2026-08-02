@@ -47,10 +47,10 @@ export default function FirmenfeierPage() {
             Firmenfeiern in {site.region}, Location, Catering &amp; Service aus einer Hand.
           </h1>
           <p className="mt-3 text-lg font-medium">
-            Platz für bis zu [X] Personen bestuhlt / [Y] Personen beim Stehempfang.
+            Platz für bis zu 100 Gäste im Innenbereich, dazu ein großer Außenhof.
           </p>
           <p className="mt-1 text-stone-600 dark:text-stone-400">
-            [ORT], [X] km von Magdeburg · [ANZAHL] Parkplätze direkt am Haus ·{" "}
+            Staßfurt, [X] km von Magdeburg · Parkplätze direkt am Haus ·{" "}
             <a href="/kontakt" className="underline">Anfahrt</a>
           </p>
           <p className="mt-3 text-sm text-stone-600 dark:text-stone-400">
@@ -63,7 +63,7 @@ export default function FirmenfeierPage() {
 
           {/* Raumvisualisierungen: [3D-RENDERINGS], ehrlich gelabelt */}
           <div className="mt-8 grid gap-4 sm:grid-cols-3">
-            {["Saal, Bankett-Bestuhlung", "Saal, Stehempfang", "Außenbereich"].map((label) => (
+            {["Innenbereich mit Tanzfläche", "Außenhof", "Cocktailwagen"].map((label) => (
               <div
                 key={label}
                 className="flex aspect-video items-center justify-center rounded-xl border border-dashed border-stone-300 bg-stone-100 text-center text-sm text-stone-500 dark:border-stone-700 dark:bg-stone-900"

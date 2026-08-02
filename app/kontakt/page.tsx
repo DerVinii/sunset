@@ -51,7 +51,7 @@ export default function KontaktPage() {
             <p className="mt-2 text-sm text-stone-600 dark:text-stone-400">
               {site.address.street}, {site.address.zip} {site.address.city}
               <br />
-              [ANZAHL] Parkplätze am Haus · [KARTEN-EINBINDUNG]
+              Parkplätze am Haus · [KARTEN-EINBINDUNG]
             </p>
           </div>
         </div>

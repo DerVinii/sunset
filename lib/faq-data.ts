@@ -142,7 +142,7 @@ export const faqLocation: FaqItem[] = [
   },
   {
     q: "Wie viele Gäste passen rein?",
-    a: "Mit Bestuhlung: bis [X] Personen. Beim Stehempfang: bis [Y] Personen. Mit Tanzfläche empfehlen wir bis [Z] Gäste. [KAPAZITÄT BESTÄTIGEN]",
+    a: "Im Innenbereich finden bis zu 100 Gäste Platz, eine feste Tanzfläche ist vorhanden. Dazu kommt ein großer Außenhof, den ihr zusätzlich nutzen könnt.",
   },
   {
     q: "Bis wann dürfen wir feiern?",
@@ -166,7 +166,7 @@ export const faqLocation: FaqItem[] = [
   },
   {
     q: "Gibt es Parkplätze?",
-    a: "Ja, [ANZAHL] Parkplätze direkt am Haus. [BESTÄTIGEN]",
+    a: "Ja, direkt am Haus, in ausreichender Anzahl.",
   },
   {
     q: "Geht eine Freie Trauung im Außenbereich?",
@@ -248,7 +248,7 @@ export const faqHochzeit: FaqItem[] = [
   },
   {
     q: "Wie viele Gäste passen rein, mit Tanzfläche?",
-    a: "Bequem mit Tanzfläche: bis [X] Gäste. Maximal bestuhlt: [Y]. [KAPAZITÄT BESTÄTIGEN]",
+    a: "Bis zu 100 Gäste im Innenbereich, die Tanzfläche ist fest vorhanden. Der große Außenhof kommt als zusätzliche Fläche dazu.",
   },
   {
     q: "Bis wann darf gefeiert werden?",

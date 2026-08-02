@@ -27,7 +27,8 @@ export default function ImpressumPage() {
         E-Mail: {site.email}
       </p>
       <p>
-        Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG: [UST-ID]
+        Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG: [UST-IDNR, sobald vergeben. Achtung: die
+        Steuernummer gehört NICHT ins Impressum, nur die USt-IdNr.]
         <br />
         Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV: [NAME, ANSCHRIFT]
       </p>

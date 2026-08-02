@@ -1,7 +1,15 @@
 /**
- * Equipment-Katalog (Plan 5.8). Preise = [PLATZHALTER DES UNTERNEHMERS];
- * Marktkorridore aus dem Research als Startwerte. Beide Tarife gleich groß
- * anzeigen (Werktag/Wochenende). Fast jede private Feier ist samstags.
+ * Equipment-Katalog (Plan 5.8).
+ *
+ * BESTAND (vom Unternehmer bestätigt): Bierwagen inkl. Zapfanlage, Zelte, Hüpfburg,
+ * Bänke und Tische (= Bierzeltgarnituren), Boxautomat, Kickertisch.
+ * NICHT bestätigt und deshalb sichtbar markiert: Stehtische, Geschirr-Sets.
+ *
+ * ALLE PREISE SIND WEITERHIN [PLATZHALTER DES UNTERNEHMERS] — Marktkorridore aus dem
+ * Research als Startwerte. Sie MÜSSEN vor dem Livegang ersetzt werden: der Rechner
+ * summiert sie zu einer Gesamtsumme, die der Kunde als echte Zahl liest.
+ * Beide Tarife gleich groß anzeigen (Werktag/Wochenende). Fast jede private Feier
+ * ist samstags.
  */
 
 export type EquipmentItem = {
@@ -43,7 +51,7 @@ export const equipment: EquipmentItem[] = [
   },
   {
     id: "stehtisch",
-    name: "Stehtisch (mit Husse)",
+    name: "Stehtisch (mit Husse) [IM BESTAND?]",
     werktag: 12,
     wochenende: 12,
     einheit: "pro Stück & Tag",
@@ -60,15 +68,34 @@ export const equipment: EquipmentItem[] = [
   },
   {
     id: "huepfburg",
-    name: "Hüpfburg [FALLS IM BESTAND]",
+    name: "Hüpfburg",
     werktag: 120,
     wochenende: 180,
     einheit: "pro Tag / Wochenende",
+    hinweis: "Der Klassiker, wenn Kinder mitfeiern. Aufbau und Abbau übernehmen wir.",
+    maxAnzahl: 1,
+  },
+  {
+    id: "boxautomat",
+    name: "Boxautomat",
+    werktag: 150,
+    wochenende: 220,
+    einheit: "pro Tag / Wochenende",
+    hinweis: "Sorgt zuverlässig für Wettbewerb unter den Gästen. [PREIS BESTÄTIGEN]",
+    maxAnzahl: 1,
+  },
+  {
+    id: "kicker",
+    name: "Kickertisch",
+    werktag: 60,
+    wochenende: 90,
+    einheit: "pro Tag / Wochenende",
+    hinweis: "Für drinnen und für überdachte Außenbereiche. [PREIS BESTÄTIGEN]",
     maxAnzahl: 1,
   },
   {
     id: "geschirr",
-    name: "Geschirr & Gläser (Set für 10 Personen)",
+    name: "Geschirr & Gläser (Set für 10 Personen) [IM BESTAND?]",
     werktag: 12,
     wochenende: 12,
     einheit: "pro Set & Event",

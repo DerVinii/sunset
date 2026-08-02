@@ -9,11 +9,11 @@ export const site = {
   legalName: "[FIRMENNAME / INHABER]",
   domain: "https://sunset-events.example", // [DOMAIN]
   region: "Sachsen-Anhalt",
-  city: "[ORT]",
+  city: "Staßfurt",
   address: {
-    street: "[STRASSE HAUSNR]",
-    zip: "[PLZ]",
-    city: "[ORT]",
+    street: "Atzendorfer Straße 2",
+    zip: "[PLZ — vom Unternehmer nachzureichen]",
+    city: "Staßfurt",
   },
   phone: "+49 000 0000000", // [TELEFONNUMMER]
   phoneDisplay: "0000 / 000 00 00", // [TELEFONNUMMER]
@@ -44,8 +44,12 @@ export const site = {
     { zone: "B", range: "21–40 km", price: 69 },
     { zone: "C", range: "41–80 km", price: 119 },
   ],
-  /** Lager-PLZ als Referenzpunkt für Zonenberechnung. [LAGER-ADRESSE] */
-  basePlz: "39104",
+  /**
+   * Referenzpunkt für die Zonenberechnung: der Standort Staßfurt.
+   * [PLZ NACHREICHEN] — solange hier keine echte Staßfurter PLZ steht, greift im
+   * Formular die manuelle Entfernungswahl statt der automatischen Zuordnung.
+   */
+  basePlz: "[PLZ]",
   social: {
     instagram: "https://instagram.com/[PROFIL]",
     googleBusiness: "[GOOGLE-BUSINESS-PROFIL-URL]",

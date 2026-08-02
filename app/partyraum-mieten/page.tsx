@@ -20,7 +20,7 @@ export default function PartyraumPage() {
       <div className="border-b border-stone-200 bg-gradient-to-b from-amber-50 to-stone-50 dark:border-stone-800 dark:from-stone-900 dark:to-stone-950">
         <Container className="py-14 sm:py-20">
           <h1 className="font-display max-w-3xl text-3xl font-semibold tracking-tight sm:text-5xl">
-            Partyraum mieten in [ORT], für 30 bis 80 Gäste.
+            Partyraum mieten in Staßfurt, für bis zu 100 Gäste.
           </h1>
           <p className="mt-3 max-w-2xl text-lg text-stone-600 dark:text-stone-300">
             Feiern ohne Stress mit den Nachbarn: Raum, Tische, Stühle und Küche, Miete ab [PREIS] €, alles inklusive MwSt.
@@ -39,7 +39,7 @@ export default function PartyraumPage() {
             { t: "Miete ab [PREIS] €", d: "Endreinigung: [PREIS] € Pauschale. Kaution: [BETRAG] €. Keine versteckten Kosten." },
             { t: "Tische & Stühle inklusive", d: "Plus Küche/Theke zum Mitbenutzen. [AUSSTATTUNG BESTÄTIGEN]" },
             { t: "Musik bis [UHRZEIT]", d: "Drinnen feiern ohne Zeitlimit. Draußen gilt ab 22 Uhr Nachtruhe." },
-            { t: "[ANZAHL] Parkplätze", d: "Direkt am Haus, deine Gäste müssen nicht suchen." },
+            { t: "Parkplätze am Haus", d: "Ausreichend vorhanden, deine Gäste müssen nicht suchen." },
             { t: "Essen & Getränke dazu?", d: "Partyservice und Bierwagen bekommst du bei uns gleich mit." },
           ].map((f) => (
             <div key={f.t} className="rounded-xl border border-stone-200 p-5 dark:border-stone-800">

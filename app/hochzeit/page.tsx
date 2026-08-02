@@ -21,7 +21,7 @@ export default function HochzeitPage() {
             Eure Hochzeit in {site.region}, ein Ort, ein Team, ein Festpreis.
           </h1>
           <p className="mt-3 text-lg text-stone-600 dark:text-stone-300">
-            Platz für [MIN]–[MAX] Personen, bequem mit Tanzfläche für 80 Gäste. Eröffnungssaison [JAHR]: viele Wunschtermine noch verfügbar.
+            Platz für bis zu 100 Gäste, mit fester Tanzfläche und großem Außenhof. Eröffnungssaison [JAHR]: viele Wunschtermine noch verfügbar.
           </p>
 
           {/* Hero-Visual: gelabeltes 3D-Rendering des echten Saals, KEINE fremden Hochzeitsfotos */}
@@ -131,7 +131,7 @@ export default function HochzeitPage() {
           <div>
             <H2>Euer Ort zum Feiern</H2>
             <Lead>
-              Saal mit Platz für [MIN]–[MAX] Gäste, Garten für die Freie Trauung [BESTÄTIGEN], Tanzfläche,
+              Saal mit Platz für bis zu 100 Gäste, fester Tanzfläche und großem Außenhof [FREIE TRAUUNG IM HOF BESTÄTIGEN],
               Parkplätze direkt am Haus. Schaut euch im 3D-Rundgang um, mit Bestuhlungsplänen und Licht-Szenen für Tag und Nacht.
             </Lead>
             <div className="mt-4 flex aspect-video items-center justify-center rounded-xl border border-dashed border-stone-300 bg-stone-100 text-sm text-stone-500 dark:border-stone-700 dark:bg-stone-900">

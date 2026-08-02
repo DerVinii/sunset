@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 const saeulen = [
   {
     title: "Location & Raumvermietung",
-    text: "Eventlocation in [ORT] für [30]–[120] Gäste, mit Technik, Parkplätzen und klarer Preisstruktur.",
+    text: "Eventlocation in Staßfurt für bis zu 100 Gäste, mit Tanzfläche, großem Außenhof und Parkplätzen am Haus.",
     preis: "Miete ab [X] €",
     links: [
       { href: "/location", label: "Zur Location" },
@@ -29,7 +29,7 @@ const saeulen = [
   },
   {
     title: "Equipment- & Bierwagen-Verleih",
-    text: "Bierwagen, Zapfanlagen, Garnituren, Zelte, geliefert und aufgebaut oder zum Selbstabholen.",
+    text: "Bierwagen mit Zapfanlage, Zelte, Garnituren, Hüpfburg, Boxautomat und Kickertisch, geliefert und aufgebaut oder zum Selbstabholen.",
     preis: "Bierwagen ab [250] €/Tag",
     links: [{ href: "/mieten", label: "Zum Verleih-Katalog" }],
   },

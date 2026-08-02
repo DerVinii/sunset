@@ -38,7 +38,7 @@ export default function PreisePage() {
             <tbody>
               {[
                 ["Eventlocation (Tagesmiete)", "ab [X] €", <Link key="l" href="/location" className="underline">Location</Link>],
-                ["Partyraum (30–80 Gäste)", "ab [X] €", <Link key="pr" href="/partyraum-mieten" className="underline">Partyraum</Link>],
+                ["Partyraum (bis 100 Gäste)", "ab [X] €", <Link key="pr" href="/partyraum-mieten" className="underline">Partyraum</Link>],
                 ["Catering-Buffet", "ab [29,75] € / Person", <Link key="c" href="/catering" className="underline">Catering</Link>],
                 ["Partyservice-Buffet", "ab [X] € / Person", <Link key="p" href="/partyservice" className="underline">Partyservice</Link>],
                 ["Bierwagen", "Werktag ab [250] € · Wochenende ab [420] €", <Link key="b" href="/mieten" className="underline">Verleih</Link>],

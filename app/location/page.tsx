@@ -7,7 +7,7 @@ import { FaqSection } from "@/components/faq";
 import { faqLocation } from "@/lib/faq-data";
 
 export const metadata: Metadata = {
-  title: `Eventlocation in [ORT], ${site.region}, Platz für [30]–[120] Gäste`,
+  title: `Eventlocation in Staßfurt, ${site.region}, Platz für bis zu 100 Gäste`,
   description: `Eventlocation mieten in ${site.region}: Kapazitäten, Technik, Parkplätze, Preise, alle Fakten auf einen Blick. Tagesmiete ab [PREIS] €, transparente Endreinigungs-Pauschale.`,
 };
 
@@ -24,7 +24,7 @@ const eventVenueJsonLd = {
     addressRegion: site.region,
     addressCountry: "DE",
   },
-  maximumAttendeeCapacity: "[KAPAZITÄT]",
+  maximumAttendeeCapacity: "100",
   telephone: site.phone,
 };
 
@@ -34,7 +34,7 @@ export default function LocationPage() {
       <div className="border-b border-stone-200 bg-gradient-to-b from-stone-50 to-stone-50 dark:border-stone-800 dark:from-stone-900 dark:to-stone-950">
         <Container className="py-14 sm:py-20">
           <h1 className="font-display max-w-3xl text-3xl font-semibold tracking-tight sm:text-5xl">
-            Eventlocation in [ORT], Platz für [30]–[120] Gäste.
+            Eventlocation in Staßfurt, Platz für bis zu 100 Gäste.
           </h1>
           <p className="mt-3 max-w-2xl text-lg text-stone-600 dark:text-stone-300">
             Alle Fakten auf einen Blick: Kapazität, Technik, Preise. Keine Überraschungen.
@@ -51,13 +51,15 @@ export default function LocationPage() {
           <table className="w-full text-sm">
             <tbody>
               {[
-                ["Kapazität Bankett (Tische & Stühle)", "[X] Personen"],
-                ["Kapazität Stehempfang", "[Y] Personen"],
-                ["Kapazität mit Tanzfläche", "[Z] Personen"],
-                ["Fläche", "[X] m²"],
+                ["Kapazität Innenbereich", "bis zu 100 Gäste"],
+                ["Tanzfläche", "fest im Innenbereich"],
+                ["Außenbereich", "großer Außenhof, zusätzlich nutzbar"],
+                ["Raucherbereich", "separat und überdacht"],
+                ["Cocktailwagen", "vor Ort verfügbar"],
+                ["Fläche", "[QUADRATMETER]"],
                 ["Technik", "Tonanlage, Funkmikrofone, Beamer & Leinwand [BESTAND BESTÄTIGEN]"],
                 ["Strom", "230 V + Starkstrom CEE 16A/32A [VERFÜGBARKEIT]"],
-                ["Parkplätze", "[ANZAHL] direkt am Haus"],
+                ["Parkplätze", "Direkt am Haus, ausreichend vorhanden"],
                 ["Barrierefreiheit", "Stufenloser Zugang, Rollstuhl-WC [BESTÄTIGEN]"],
                 ["Musik / Lärmschutz", "Innen ohne Zeitlimit, außen bis 22:00 Uhr [AUFLAGEN]"],
                 ["Deko-Zugang", "Am Feiertag ab 10:00 Uhr, Vorabend nach Absprache"],
@@ -90,7 +92,7 @@ export default function LocationPage() {
         <p className="mt-4 text-sm text-stone-600 dark:text-stone-400">{site.priceLogic.sie}</p>
         <p className="mt-4 text-sm">
           Für private Geburtstage &amp; Familienfeiern:{" "}
-          <Link href="/partyraum-mieten" className="underline">Partyraum für 30–80 Gäste</Link> · Raum + Essen kombinieren:{" "}
+          <Link href="/partyraum-mieten" className="underline">Partyraum für private Feiern</Link> · Raum + Essen kombinieren:{" "}
           <Link href="/catering" className="underline">Catering</Link>
         </p>
       </Section>

@@ -32,9 +32,9 @@ const einstiege = [
 ];
 
 const saeulen = [
-  { href: "/location", title: "Location & Räume", text: "Eventlocation in [ORT] mit Platz für [30]–[120] Gäste.", preis: "Miete ab [X] €" },
+  { href: "/location", title: "Location & Räume", text: "Eventlocation in Staßfurt mit Platz für bis zu 100 Gäste, dazu ein großer Außenhof.", preis: "Miete ab [X] €" },
   { href: "/catering", title: "Catering & Partyservice", text: "Vom Buffet bis zum Foodtruck, für Firmen und Familien.", preis: "Buffet ab [25] €/Person" },
-  { href: "/mieten", title: "Equipment & Bierwagen", text: "Bierwagen, Zelte, Garnituren, Zapfanlagen und mehr.", preis: "Bierwagen ab [250] €/Tag" },
+  { href: "/mieten", title: "Equipment & Bierwagen", text: "Bierwagen mit Zapfanlage, Zelte, Garnituren, Hüpfburg, Boxautomat und Kickertisch.", preis: "Bierwagen ab [250] €/Tag" },
   { href: "/eventservice", title: "Eventplanung & Service", text: "Planung, Personal und Eventleitung vor Ort.", preis: "Pauschale ab [500] €" },
 ];
 
@@ -136,7 +136,7 @@ export default function Home() {
           <Reveal>
             <H2>Wer hinter {site.name} steht</H2>
             <Lead>
-              Wir sind [NAMEN DER GRÜNDER] aus [ORT], mit [X] Jahren Erfahrung in Gastronomie und Events. Bei uns haben
+              Wir sind [NAMEN DER GRÜNDER] aus Staßfurt, mit [X] Jahren Erfahrung in Gastronomie und Events. Bei uns haben
               Sie eine feste Ansprechperson: vom ersten Anruf bis zum letzten Glas.
             </Lead>
             <ul className="mt-5 space-y-2.5 text-sm text-stone-700 dark:text-stone-300">
