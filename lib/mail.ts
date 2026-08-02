@@ -18,8 +18,11 @@ export type MailPayload = {
 export async function deliverToOperator(payload: MailPayload): Promise<{ ok: boolean }> {
   const apiKey = process.env.RESEND_API_KEY;
   const to = process.env.OPERATOR_EMAIL;
+  // Ohne echte Absenderadresse wird gar nicht erst versendet: eine erfundene Domain
+  // würde der Mailanbieter ohnehin ablehnen, und die Anfrage wäre still verloren.
+  const from = process.env.MAIL_FROM;
 
-  if (apiKey && to) {
+  if (apiKey && to && from) {
     const res = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: {
@@ -27,7 +30,7 @@ export async function deliverToOperator(payload: MailPayload): Promise<{ ok: boo
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        from: process.env.MAIL_FROM ?? "anfragen@sunset-events.example",
+        from,
         to,
         subject: payload.subject,
         text: payload.text,

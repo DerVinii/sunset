@@ -1,26 +1,22 @@
 import type { MetadataRoute } from "next";
 import { site } from "@/lib/site";
 
+const pfade = [
+  "",
+  "/location",
+  "/catering",
+  "/mieten",
+  "/hochzeit",
+  "/firmenfeier",
+  "/private-feier",
+  "/ueber-uns",
+  "/kontakt",
+];
+
 export default function sitemap(): MetadataRoute.Sitemap {
-  const routes = [
-    "",
-    "/firmenfeier",
-    "/hochzeit",
-    "/private-feier",
-    "/partyraum-mieten",
-    "/leistungen",
-    "/location",
-    "/catering",
-    "/partyservice",
-    "/mieten",
-    "/eventservice",
-    "/preise",
-    "/ueber-uns",
-    "/kontakt",
-  ];
-  return routes.map((route) => ({
-    url: `${site.domain}${route}`,
-    changeFrequency: route === "" ? "weekly" : "monthly",
-    priority: route === "" ? 1 : route === "/firmenfeier" || route === "/mieten" ? 0.9 : 0.7,
+  return pfade.map((p) => ({
+    url: `${site.domain}${p}`,
+    changeFrequency: "monthly",
+    priority: p === "" ? 1 : 0.7,
   }));
 }

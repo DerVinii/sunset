@@ -17,21 +17,23 @@ type FieldSpec = {
 const initialState: InquiryState = { status: "idle", message: "" };
 
 /**
- * Konfigurierbares Anfrageformular (Plan Kap. 6):
- * max. 5 Pflichtfelder, DSGVO-Checkbox, Bestätigung + ggf. Vormerkungs-Zusage
- * erscheinen kanalunabhängig direkt auf der Seite (Bestätigungs-Regel).
+ * Konfigurierbares Anfrageformular.
+ *
+ * Die Zeile unter dem Knopf nennt bewusst keine Antwortzeit: Wie schnell der
+ * Unternehmer antwortet, steht noch nicht fest, und eine Frist, die im Alltag
+ * reißt, kostet mehr Vertrauen, als sie vorher gewinnt.
  */
 export function InquiryForm({
   funnel,
   fields,
   submitLabel,
-  promise,
+  promise = "Wir melden uns bei dir und klären den Rest persönlich.",
   id = "anfrage",
 }: {
   funnel: Funnel;
   fields: FieldSpec[];
   submitLabel: string;
-  promise: string;
+  promise?: string;
   id?: string;
 }) {
   const [state, formAction, pending] = useActionState(submitInquiryAction, initialState);
@@ -41,11 +43,6 @@ export function InquiryForm({
       <div id={id} className="rounded-xl border border-emerald-200 bg-emerald-50 p-6 dark:border-emerald-900 dark:bg-emerald-950/40">
         <p className="text-lg font-semibold text-emerald-900 dark:text-emerald-200">Anfrage eingegangen ✓</p>
         <p className="mt-2 text-emerald-900/90 dark:text-emerald-100/90">{state.message}</p>
-        {state.holdNote && (
-          <p className="mt-3 rounded-lg bg-white/70 p-3 text-sm font-medium text-emerald-900 dark:bg-emerald-900/40 dark:text-emerald-100">
-            {state.holdNote}
-          </p>
-        )}
       </div>
     );
   }

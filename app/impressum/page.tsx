@@ -1,46 +1,49 @@
 import type { Metadata } from "next";
 import { site } from "@/lib/site";
-import { Container } from "@/components/ui-basics";
+import { Container, Section } from "@/components/ui-basics";
 
 export const metadata: Metadata = {
   title: "Impressum",
   robots: { index: false },
 };
 
+/**
+ * Noch unvollständig: Rechtsform, Inhabername, Postleitzahl, Telefonnummer,
+ * E-Mail und Umsatzsteuer-Identifikationsnummer liegen nicht vor. Diese Seite
+ * muss vor dem Livegang ergänzt und rechtlich geprüft werden.
+ */
 export default function ImpressumPage() {
   return (
-    <Container className="prose prose-neutral max-w-3xl py-16 dark:prose-invert">
-      <h1>Impressum</h1>
-      <p>
-        <strong>Angaben gemäß § 5 DDG</strong>
-      </p>
-      <p>
-        {site.legalName}
-        <br />
-        {site.address.street}
-        <br />
-        {site.address.zip} {site.address.city}
-      </p>
-      <p>
-        Telefon: {site.phoneDisplay}
-        <br />
-        E-Mail: {site.email}
-      </p>
-      <p>
-        Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG: [UST-IDNR, sobald vergeben. Achtung: die
-        Steuernummer gehört NICHT ins Impressum, nur die USt-IdNr.]
-        <br />
-        Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV: [NAME, ANSCHRIFT]
-      </p>
-      <p>
-        [WEITERE PFLICHTANGABEN JE NACH RECHTSFORM, z. B. Registereintrag, Aufsichtsbehörde für Gaststättenbetrieb.
-        Vor Launch rechtlich prüfen lassen.]
-      </p>
-      <h2>Streitschlichtung</h2>
-      <p>
-        Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle
-        teilzunehmen.
-      </p>
-    </Container>
+    <Section>
+      <Container className="prose prose-stone max-w-2xl dark:prose-invert">
+        <h1>Impressum</h1>
+
+        <p className="rounded-xl border border-amber-300 bg-amber-50 p-4 text-sm not-prose dark:border-amber-900 dark:bg-amber-950/40">
+          Diese Angaben sind noch nicht vollständig. Die Seite ist eine Vorschau und noch nicht öffentlich
+          angekündigt.
+        </p>
+
+        <h2>Anbieter</h2>
+        <p>
+          {site.name}
+          <br />
+          {site.address.street}
+          <br />
+          {site.address.city}
+        </p>
+
+        <h2>Kontakt</h2>
+        <p>Bitte nutzen Sie bis auf Weiteres das Anfrageformular auf dieser Seite.</p>
+
+        <h2>Umsatzsteuer</h2>
+        <p>Der Betrieb ist umsatzsteuerpflichtig.</p>
+
+        <h2>Streitschlichtung</h2>
+        <p>
+          Wir sind nicht bereit und nicht verpflichtet, an Streitbeilegungsverfahren vor einer
+          Verbraucherschlichtungsstelle teilzunehmen.
+        </p>
+      </Container>
+    </Section>
   );
 }

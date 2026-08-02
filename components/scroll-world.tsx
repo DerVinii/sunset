@@ -12,7 +12,7 @@ import { mountScrollWorld } from "@/lib/scroll-world/scrub-engine";
  * dive-N.mp4 = Kameraflug in die Szene, conn-N.mp4 = Überflug zur nächsten,
  * *-m.mp4 = derselbe Clip in 720p/15 fps für unterwegs (reine ffmpeg-Umkodierung).
  * Ablauf und Prompts: world-gen/README.md. Copy folgt dem validierten Plan
- * (einfache Sprache, Ab-Preise als [PLATZHALTER], CTA → #termincheck).
+ * Texte nennen nur bestätigte Fakten und keine Preise.
  */
 
 const worldConfig = {
@@ -53,8 +53,8 @@ const worldConfig = {
       accent: "#ea580c",
       eyebrow: "Goldene Stunde",
       title: "Essen, über das man noch lange redet.",
-      body: "Buffet, Menü oder BBQ, frisch aus unserer Küche. Vegetarisch ist immer dabei.",
-      tags: ["Buffet · Menü · BBQ", "ab [25] € pro Person"],
+      body: "Das Buffet kommt von uns. Ein Ansprechpartner für Raum und Essen statt zwei Terminen im Kalender.",
+      tags: ["Buffet aus eigenem Haus"],
     },
     {
       id: "garten",
@@ -67,7 +67,7 @@ const worldConfig = {
       eyebrow: "Sonnenuntergang",
       title: "Geliefert. Aufgebaut. Eingeschenkt.",
       body: "Bierwagen mit Zapfanlage, Zelte, Garnituren, dazu Hüpfburg, Boxautomat und Kickertisch. Wir bringen die Party in deinen Garten.",
-      tags: ["Bierwagen ab [250] €/Tag", "Aufbau inklusive"],
+      tags: ["Bierwagen mit Zapfanlage", "Zelte, Tische, Bänke"],
     },
     {
       id: "hochzeit",
@@ -79,8 +79,8 @@ const worldConfig = {
       accent: "#be123c",
       eyebrow: "Blaue Stunde",
       title: "Euer Tag. Unser Job.",
-      body: "Großer Außenhof, festlicher Saal, ein Festpreis, und ein Probeessen, bevor ihr euch entscheidet.",
-      tags: ["Festpreis im Angebot", "Probeessen inklusive"],
+      body: "Empfang auf dem Hof, Essen im Saal, und der Weg zur Tanzfläche ist zwei Schritte lang.",
+      tags: ["Tanzfläche im Saal", "Cocktailwagen vor Ort"],
       scroll: 1.5,
       linger: 0.45,
     },
@@ -94,13 +94,13 @@ const worldConfig = {
       accent: "#f59e0b",
       eyebrow: "Mitternacht",
       title: "Feiern, bis der Chef tanzt.",
-      body: "Firmenfeiern komplett organisiert, budgetsicher kalkuliert für den 110-€-Freibetrag. Angebot bis zum nächsten Werktag, 12:00 Uhr.",
+      body: "Raum, Buffet und Ausstattung von derselben Adresse. Sie organisieren eine Feier, keine Lieferkette.",
       tags: ["Alles aus einer Hand"],
       scroll: 1.6,
       linger: 0.4,
       cta: {
-        primary: { label: "Verfügbarkeit prüfen", href: "#termincheck" },
-        secondary: { label: "Unsere Pakete ansehen", href: "/firmenfeier" },
+        primary: { label: "Anfrage stellen", href: "/kontakt#anfrage" },
+        secondary: { label: "Die Location ansehen", href: "/location" },
       },
     },
   ],

@@ -1,111 +1,109 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { site } from "@/lib/site";
-import { Container, H2, Lead, Section } from "@/components/ui-basics";
-import { AvailabilityCheck } from "@/components/availability-check";
+import { Container, CtaButton, H2, Lead, Section } from "@/components/ui-basics";
 import { FaqSection } from "@/components/faq";
 import { faqLocation } from "@/lib/faq-data";
 
 export const metadata: Metadata = {
-  title: `Eventlocation in Staßfurt, ${site.region}, Platz für bis zu 100 Gäste`,
-  description: `Eventlocation mieten in ${site.region}: Kapazitäten, Technik, Parkplätze, Preise, alle Fakten auf einen Blick. Tagesmiete ab [PREIS] €, transparente Endreinigungs-Pauschale.`,
+  title: `Eventlocation in ${site.city} mieten`,
+  description: `Unsere Location in ${site.city}: Innenbereich für rund 100 Gäste mit fester Tanzfläche, großer Außenhof, überdachter Raucherbereich, Cocktailwagen und Parkplätze am Haus.`,
 };
 
-/** Säulen-Seite Location (Plan 5.6): harte Fakten, EventVenue-Schema. */
-const eventVenueJsonLd = {
+/** EventVenue-Schema. Nur belegte Angaben, deshalb ohne PLZ und ohne Preisspanne. */
+const venueJsonLd = {
   "@context": "https://schema.org",
   "@type": "EventVenue",
-  name: `${site.name}, Eventlocation`,
+  name: site.name,
   address: {
     "@type": "PostalAddress",
     streetAddress: site.address.street,
-    postalCode: site.address.zip,
     addressLocality: site.address.city,
     addressRegion: site.region,
     addressCountry: "DE",
   },
-  maximumAttendeeCapacity: "100",
-  telephone: site.phone,
+  maximumAttendeeCapacity: 100,
 };
+
+const ausstattung = [
+  {
+    t: "Innenbereich für rund 100 Gäste",
+    d: "Genug Platz für eine Hochzeit, eine Betriebsfeier oder einen runden Geburtstag, ohne dass jemand am Katzentisch sitzt.",
+  },
+  {
+    t: "Feste Tanzfläche",
+    d: "Die Tanzfläche gehört zum Raum. Es muss also nichts umgeräumt werden, wenn die Musik lauter wird.",
+  },
+  {
+    t: "Großer Außenhof",
+    d: "Der Hof kommt zum Innenbereich dazu. Platz für den Empfang, zum Grillen oder einfach zum Rausgehen zwischendurch.",
+  },
+  {
+    t: "Überdachter Raucherbereich",
+    d: "Separat und mit Dach. Bei Regen steht niemand in der Tür und die Wärme bleibt drinnen.",
+  },
+  {
+    t: "Cocktailwagen",
+    d: "Steht bei uns vor Ort. Für den Sektempfang draußen genauso wie für die zweite Hälfte des Abends.",
+  },
+  {
+    t: "Parkplätze am Haus",
+    d: "Ausreichend vorhanden. Ihre Gäste müssen nicht erst durch den Ort fahren und eine Lücke suchen.",
+  },
+];
 
 export default function LocationPage() {
   return (
     <>
-      <div className="border-b border-stone-200 bg-gradient-to-b from-stone-50 to-stone-50 dark:border-stone-800 dark:from-stone-900 dark:to-stone-950">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(venueJsonLd) }} />
+
+      <div className="border-b border-stone-200 bg-stone-50 dark:border-stone-800 dark:bg-stone-950">
         <Container className="py-14 sm:py-20">
           <h1 className="font-display max-w-3xl text-3xl font-semibold tracking-tight sm:text-5xl">
-            Eventlocation in Staßfurt, Platz für bis zu 100 Gäste.
+            Unsere Location in {site.city}.
           </h1>
-          <p className="mt-3 max-w-2xl text-lg text-stone-600 dark:text-stone-300">
-            Alle Fakten auf einen Blick: Kapazität, Technik, Preise. Keine Überraschungen.
+          <p className="mt-4 max-w-2xl text-lg leading-relaxed text-stone-600 dark:text-stone-300">
+            Ein Innenbereich für rund 100 Gäste, eine Tanzfläche, die schon da ist, und ein Hof, auf dem man auch mal
+            durchatmen kann. Das Essen und das Equipment bekommen Sie bei uns gleich mit.
           </p>
-          <div className="mt-6 flex aspect-[21/9] items-center justify-center rounded-xl border border-dashed border-stone-300 bg-stone-100 text-sm text-stone-500 dark:border-stone-700 dark:bg-stone-900">
-            3D-Visualisierung / Fotos der Location [BILDMATERIAL]
+          <p className="mt-3 text-stone-600 dark:text-stone-400">
+            {site.address.street}, {site.address.city}
+          </p>
+          <div className="mt-7">
+            <CtaButton href="/kontakt#anfrage">Termin anfragen</CtaButton>
           </div>
         </Container>
       </div>
 
       <Section>
-        <H2>Die Fakten</H2>
-        <div className="mt-6 overflow-x-auto rounded-xl border border-stone-200 dark:border-stone-800">
-          <table className="w-full text-sm">
-            <tbody>
-              {[
-                ["Kapazität Innenbereich", "bis zu 100 Gäste"],
-                ["Tanzfläche", "fest im Innenbereich"],
-                ["Außenbereich", "großer Außenhof, zusätzlich nutzbar"],
-                ["Raucherbereich", "separat und überdacht"],
-                ["Cocktailwagen", "vor Ort verfügbar"],
-                ["Fläche", "[QUADRATMETER]"],
-                ["Technik", "Tonanlage, Funkmikrofone, Beamer & Leinwand [BESTAND BESTÄTIGEN]"],
-                ["Strom", "230 V + Starkstrom CEE 16A/32A [VERFÜGBARKEIT]"],
-                ["Parkplätze", "Direkt am Haus, ausreichend vorhanden"],
-                ["Barrierefreiheit", "Stufenloser Zugang, Rollstuhl-WC [BESTÄTIGEN]"],
-                ["Musik / Lärmschutz", "Innen ohne Zeitlimit, außen bis 22:00 Uhr [AUFLAGEN]"],
-                ["Deko-Zugang", "Am Feiertag ab 10:00 Uhr, Vorabend nach Absprache"],
-              ].map(([k, v]) => (
-                <tr key={k} className="border-b border-stone-100 last:border-0 dark:border-stone-800/60">
-                  <td className="p-3 font-medium">{k}</td>
-                  <td className="p-3 text-stone-600 dark:text-stone-300">{v}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </Section>
-
-      <Section className="bg-stone-50 dark:bg-stone-900/40">
-        <H2>Preise, transparent</H2>
-        <div className="mt-6 grid gap-4 sm:grid-cols-3">
-          {[
-            { t: "Grundmiete", p: "ab [PREIS] €", d: "[Wochentag/Wochenende-Staffel]" },
-            { t: "Endreinigung", p: "[PREIS] € Pauschale", d: "Steht von Anfang an im Angebot" },
-            { t: "Kaution", p: "[BETRAG] €", d: "Zurück binnen 7 Tagen nach schadenfreier Übergabe" },
-          ].map((x) => (
-            <div key={x.t} className="rounded-xl border border-stone-200 bg-white p-5 dark:border-stone-800 dark:bg-stone-900">
-              <p className="font-semibold">{x.t}</p>
-              <p className="mt-1 text-xl font-bold text-amber-700 dark:text-amber-500">{x.p}</p>
-              <p className="mt-1 text-xs text-stone-500">{x.d}</p>
+        <H2>Was zur Location gehört</H2>
+        <div className="mt-8 grid gap-4 sm:grid-cols-2">
+          {ausstattung.map((a) => (
+            <div
+              key={a.t}
+              className="rounded-2xl border border-stone-200 bg-white p-6 shadow-sm dark:border-stone-800 dark:bg-stone-900"
+            >
+              <p className="font-semibold">{a.t}</p>
+              <p className="mt-1.5 text-sm leading-relaxed text-stone-600 dark:text-stone-400">{a.d}</p>
             </div>
           ))}
         </div>
-        <p className="mt-4 text-sm text-stone-600 dark:text-stone-400">{site.priceLogic.sie}</p>
-        <p className="mt-4 text-sm">
-          Für private Geburtstage &amp; Familienfeiern:{" "}
-          <Link href="/partyraum-mieten" className="underline">Partyraum für private Feiern</Link> · Raum + Essen kombinieren:{" "}
-          <Link href="/catering" className="underline">Catering</Link>
-        </p>
       </Section>
 
-      <Section id="termincheck">
-        <H2>Wunschtermin prüfen</H2>
-        <div className="mt-6 max-w-xl">
-          <AvailabilityCheck calendar="location" labelSubject="Unsere Location" tone="sie" />
+      <Section className="bg-stone-100/70 dark:bg-stone-900/40">
+        <H2>Drinnen und draußen zusammen gedacht</H2>
+        <Lead>
+          Die meisten Feiern spielen sich nicht an einem Fleck ab. Der Empfang läuft auf dem Hof, gegessen wird drinnen,
+          und wenn es später wird, wandert die Runde zwischen Tanzfläche und Cocktailwagen hin und her. Beides liegt bei
+          uns beieinander, Sie müssen also nicht zwischen zwei Adressen pendeln.
+        </Lead>
+        <div className="mt-6">
+          <CtaButton href="/kontakt#anfrage" variant="secondary">
+            Feier beschreiben
+          </CtaButton>
         </div>
       </Section>
 
-      <FaqSection title="Häufige Fragen zur Location" items={faqLocation} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(eventVenueJsonLd) }} />
+      <FaqSection items={faqLocation} />
     </>
   );
 }

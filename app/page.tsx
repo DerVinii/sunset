@@ -2,40 +2,50 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { site } from "@/lib/site";
 import { ArrowIcon, Badge, Container, CtaButton, H2, Lead, Section } from "@/components/ui-basics";
-import { AvailabilityCheck } from "@/components/availability-check";
 import { FaqSection } from "@/components/faq";
 import { faqCatering, faqEquipment, faqLocation } from "@/lib/faq-data";
 import { ScrollWorld } from "@/components/scroll-world";
 import { Reveal, RevealItem, RevealStagger } from "@/components/reveal";
 
 export const metadata: Metadata = {
-  title: `Feiern in ${site.region}: Location, Catering & Equipment aus einer Hand`,
-  description: `Eventlocation, Catering, Bierwagen & Equipment und Eventplanung in ${site.region}. Klare Preise, Angebot bis zum nächsten Werktag 12 Uhr, Festpreis im Angebot.`,
+  title: `Eventlocation in ${site.city}: Raum, Buffet und Equipment`,
+  description: `Sunset Events in ${site.city}: Innenbereich für rund 100 Gäste mit Tanzfläche, großer Außenhof, Cocktailwagen. Dazu Buffet-Catering und Equipment zum Mieten.`,
 };
 
 const einstiege = [
   {
     href: "/firmenfeier",
-    title: "Ich plane eine Firmenfeier",
-    text: "Komplett organisiert und budgetsicher, Pakete passend zum 110-€-Freibetrag.",
+    title: "Firmenfeier",
+    text: "Ein Raum für die Belegschaft, Buffet dazu, und der Boxautomat sorgt für den Rest des Abends.",
   },
   {
     href: "/hochzeit",
-    title: "Wir planen unsere Hochzeit",
-    text: "Ein Ort, ein Team, ein Festpreis, mit Termin-Check und Probeessen.",
+    title: "Hochzeit",
+    text: "Tanzfläche drinnen, Außenhof für den Empfang, Cocktailwagen für später.",
   },
   {
-    href: "/mieten",
-    title: "Ich miete Equipment / Bierwagen",
-    text: "Klare Tagespreise, geliefert und aufgebaut, oder zum Selbstabholen.",
+    href: "/private-feier",
+    title: "Geburtstag und Familienfeier",
+    text: "Vom runden Geburtstag bis zur Jugendweihe. Die Hüpfburg für die Kinder steht schon da.",
   },
 ];
 
 const saeulen = [
-  { href: "/location", title: "Location & Räume", text: "Eventlocation in Staßfurt mit Platz für bis zu 100 Gäste, dazu ein großer Außenhof.", preis: "Miete ab [X] €" },
-  { href: "/catering", title: "Catering & Partyservice", text: "Vom Buffet bis zum Foodtruck, für Firmen und Familien.", preis: "Buffet ab [25] €/Person" },
-  { href: "/mieten", title: "Equipment & Bierwagen", text: "Bierwagen mit Zapfanlage, Zelte, Garnituren, Hüpfburg, Boxautomat und Kickertisch.", preis: "Bierwagen ab [250] €/Tag" },
-  { href: "/eventservice", title: "Eventplanung & Service", text: "Planung, Personal und Eventleitung vor Ort.", preis: "Pauschale ab [500] €" },
+  {
+    href: "/location",
+    title: "Die Location",
+    text: "Innenbereich für rund 100 Gäste mit fester Tanzfläche, dazu ein großer Außenhof und ein überdachter Raucherbereich.",
+  },
+  {
+    href: "/catering",
+    title: "Buffet",
+    text: "Das Essen kommt von uns. Ein Ansprechpartner für Raum und Buffet statt zwei Terminen im Kalender.",
+  },
+  {
+    href: "/mieten",
+    title: "Equipment mieten",
+    text: "Bierwagen mit Zapfanlage, Zelte, Tische und Bänke, Hüpfburg, Boxautomat, Kickertisch.",
+  },
 ];
 
 export default function Home() {
@@ -47,23 +57,23 @@ export default function Home() {
       {/* Weicher Übergang vom Creme der Welt in die Seitenfläche (auch im Dunkelmodus) */}
       <div aria-hidden className="h-20 bg-gradient-to-b from-[#f7efe3] to-stone-50 dark:to-stone-950" />
 
-      {/* Server-gerenderte Hero-Summary direkt unter der Welt (SEO-H1 + Conversion-Einstiege) */}
+      {/* Server-gerenderte Hero-Summary direkt unter der Welt (SEO-H1 + Einstiege) */}
       <div className="border-b border-stone-200 bg-stone-50 dark:border-stone-800 dark:bg-stone-950">
         <Container className="py-14 sm:py-20">
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-amber-700 dark:text-amber-500">
-            {site.name} · {site.region}
+            {site.name} · {site.city}
           </p>
           <h1 className="font-display mt-3 max-w-3xl text-3xl font-semibold leading-tight tracking-tight sm:text-5xl">
-            Ihr Event, <span className="text-sunset">ein Ansprechpartner</span>, klare Preise, null Stress.
+            Ein Ort in {site.city}, an dem <span className="text-sunset">alles an einem Platz</span> steht.
           </h1>
           <p className="mt-4 max-w-2xl text-lg leading-relaxed text-stone-600 dark:text-stone-300">
-            Location, Catering, Equipment und Organisation aus einer Hand. Wir planen und richten Ihr Event aus,
-            verlässlich und flexibel.
+            Der Raum, das Essen und die Ausstattung kommen bei uns von derselben Adresse. Sie müssen also nicht drei
+            Anbieter koordinieren, die sich untereinander nicht kennen.
           </p>
           <div className="mt-6 flex flex-wrap gap-2">
-            <Badge>Angebot bis zum nächsten Werktag, 12:00 Uhr</Badge>
-            <Badge>Festpreis im Angebot, keine Nachberechnungen</Badge>
-            <Badge>Alles aus einer Hand</Badge>
+            <Badge>Rund 100 Gäste im Innenbereich</Badge>
+            <Badge>Tanzfläche und großer Außenhof</Badge>
+            <Badge>Buffet und Equipment von uns</Badge>
           </div>
           <div className="mt-10 grid gap-4 sm:grid-cols-3">
             {einstiege.map((e) => (
@@ -83,106 +93,63 @@ export default function Home() {
         </Container>
       </div>
 
-      {/* So einfach geht's */}
       <Section>
         <Reveal>
-          <H2>So einfach geht&apos;s</H2>
-        </Reveal>
-        <RevealStagger className="mt-8 grid gap-4 sm:grid-cols-3">
-          {[
-            { nr: "01", t: "Anfragen", d: "In 2 Minuten, Wunschtermin, Gästezahl, fertig." },
-            { nr: "02", t: "Angebot erhalten", d: "Bis zum nächsten Werktag, 12:00 Uhr. Mit Festpreis." },
-            { nr: "03", t: "Entspannt feiern", d: "Wir kümmern uns um Raum, Essen, Technik und Ablauf." },
-          ].map((s) => (
-            <RevealItem key={s.nr}>
-              <div className="h-full rounded-2xl border border-stone-200 bg-white p-6 shadow-sm dark:border-stone-800 dark:bg-stone-900">
-                <p className="font-display text-3xl font-semibold text-sunset">{s.nr}</p>
-                <p className="mt-2 text-lg font-semibold">{s.t}</p>
-                <p className="mt-1 text-sm leading-relaxed text-stone-600 dark:text-stone-400">{s.d}</p>
-              </div>
-            </RevealItem>
-          ))}
-        </RevealStagger>
-      </Section>
-
-      {/* 4 Säulen */}
-      <Section className="bg-stone-100/70 dark:bg-stone-900/40">
-        <Reveal>
-          <H2>Vier Leistungen, ein Ansprechpartner</H2>
+          <H2>Was bei uns steht</H2>
           <Lead>
-            Location, Essen, Ausstattung und Organisation kommen bei uns aus einer Hand. Das spart Ihnen Absprachen mit
-            vier verschiedenen Anbietern, und Überraschungen auf der Rechnung.
+            Drei Dinge, die Sie sonst einzeln zusammensuchen: den Raum, das Essen und das, was auf dem Hof und im Saal
+            steht.
           </Lead>
         </Reveal>
-        <RevealStagger className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <RevealStagger className="mt-8 grid gap-4 sm:grid-cols-3">
           {saeulen.map((s) => (
-            <RevealItem key={s.href + s.title}>
+            <RevealItem key={s.href}>
               <Link
                 href={s.href}
                 className="group block h-full rounded-2xl border border-stone-200 bg-white p-5 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-md dark:border-stone-800 dark:bg-stone-900"
               >
                 <p className="font-semibold">{s.title}</p>
                 <p className="mt-1.5 text-sm leading-relaxed text-stone-600 dark:text-stone-400">{s.text}</p>
-                <p className="mt-4 text-sm font-semibold text-amber-700 dark:text-amber-500">{s.preis}</p>
               </Link>
             </RevealItem>
           ))}
         </RevealStagger>
       </Section>
 
-      {/* Vertrauensblock Kaltstart */}
-      <Section>
+      <Section className="bg-stone-100/70 dark:bg-stone-900/40">
         <div className="grid gap-8 lg:grid-cols-2">
           <Reveal>
-            <H2>Wer hinter {site.name} steht</H2>
+            <H2>Wir fangen gerade an</H2>
             <Lead>
-              Wir sind [NAMEN DER GRÜNDER] aus Staßfurt, mit [X] Jahren Erfahrung in Gastronomie und Events. Bei uns haben
-              Sie eine feste Ansprechperson: vom ersten Anruf bis zum letzten Glas.
+              Sunset Events ist neu. Das heißt für Sie: Wir haben Zeit, uns Ihre Feier wirklich anzuhören, und Sie sind
+              nicht Veranstaltung Nummer 87 in diesem Jahr. Was wir haben, steht auf dieser Seite. Was wir noch nicht
+              haben, schreiben wir nicht hin.
             </Lead>
-            <ul className="mt-5 space-y-2.5 text-sm text-stone-700 dark:text-stone-300">
-              <li>✓ Gastro-Hygienenachweis (HACCP) [NACHWEIS]</li>
-              <li>✓ Betriebshaftpflicht versichert [POLICE]</li>
-              <li>✓ Regional verwurzelt in {site.region}</li>
-            </ul>
-            <div className="mt-6">
-              <CtaButton href="/ueber-uns" variant="secondary">
-                Mehr über uns
-              </CtaButton>
-            </div>
           </Reveal>
           <Reveal delay={0.1}>
             <div className="h-full rounded-2xl bg-stone-950 p-7 text-stone-50">
-              <p className="text-sm font-semibold uppercase tracking-wide text-amber-400">Preistransparenz</p>
+              <p className="text-sm font-semibold uppercase tracking-wide text-amber-400">Zum Thema Preise</p>
               <p className="font-display mt-3 text-2xl font-semibold leading-snug">
-                Keine versteckten Nebenkosten. Ihr Richtbudget in 60 Sekunden.
+                Eine Preisliste steht hier noch nicht.
               </p>
-              <p className="mt-3 text-sm leading-relaxed text-stone-400">{site.priceLogic.sie}</p>
+              <p className="mt-3 leading-relaxed text-stone-400">
+                Wir stellen sie gerade zusammen. Bis dahin gilt: Sagen Sie uns, was Sie vorhaben, wie viele Gäste kommen
+                und wann. Dann bekommen Sie eine Zahl für Ihre Feier statt einer Spanne, in der am Ende alles möglich
+                ist.
+              </p>
               <div className="mt-5">
-                <CtaButton href="/preise">Zum Budget-Rechner</CtaButton>
+                <CtaButton href="/kontakt#anfrage">Feier beschreiben</CtaButton>
               </div>
             </div>
           </Reveal>
         </div>
       </Section>
 
-      {/* On-Page-Termin-Check (Ziel des Header-CTAs) */}
-      <Section id="termincheck" className="bg-stone-100/70 dark:bg-stone-900/40">
-        <Reveal>
-          <H2>Ist Ihr Wunschtermin frei?</H2>
-          <Lead>Datum eingeben. Sie sehen sofort, ob unsere Location an Ihrem Tag frei ist.</Lead>
-          <div className="mt-7 max-w-xl">
-            <AvailabilityCheck calendar="location" labelSubject="Unsere Location" tone="sie" />
-          </div>
-        </Reveal>
-      </Section>
-
-      {/* Kurz-FAQ */}
       <FaqSection
-        title="Die häufigsten Fragen"
-        items={[faqLocation[0], faqCatering[1], faqEquipment[0], faqCatering[5], faqLocation[2]]}
+        title="Häufige Fragen"
+        items={[faqLocation[0], faqLocation[1], faqCatering[0], faqEquipment[0], faqLocation[4], faqLocation[6]]}
       />
 
-      {/* Abschluss-CTA */}
       <Section>
         <Reveal>
           <div className="relative overflow-hidden rounded-3xl bg-stone-950 p-9 text-white sm:p-14">
@@ -195,14 +162,16 @@ export default function Home() {
               }}
             />
             <div className="relative">
-              <h2 className="font-display text-3xl font-semibold sm:text-4xl">Bereit? Prüfen Sie Ihren Termin.</h2>
-              <p className="mt-3 max-w-xl text-stone-300">{site.responsePromise.sie} Meist sind wir schneller.</p>
+              <h2 className="font-display text-3xl font-semibold sm:text-4xl">Erzählen Sie uns von Ihrer Feier.</h2>
+              <p className="mt-3 max-w-xl text-stone-300">
+                Datum, Gästezahl, Anlass. Mehr brauchen wir für den Anfang nicht.
+              </p>
               <div className="mt-6">
                 <a
-                  href="#termincheck"
+                  href="/kontakt#anfrage"
                   className="cta-glow inline-flex cursor-pointer items-center justify-center rounded-xl bg-white px-6 py-3.5 font-semibold text-stone-950 transition-transform duration-200 hover:-translate-y-0.5"
                 >
-                  Verfügbarkeit prüfen
+                  Anfrage schreiben
                 </a>
               </div>
             </div>

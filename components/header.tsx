@@ -6,29 +6,16 @@ import { useState } from "react";
 import { site } from "@/lib/site";
 
 const nav = [
-  { href: "/firmenfeier", label: "Firmenfeier" },
+  { href: "/location", label: "Location" },
+  { href: "/catering", label: "Buffet" },
+  { href: "/mieten", label: "Verleih" },
   { href: "/hochzeit", label: "Hochzeit" },
+  { href: "/firmenfeier", label: "Firmenfeier" },
   { href: "/private-feier", label: "Private Feier" },
-  { href: "/leistungen", label: "Leistungen" },
-  { href: "/preise", label: "Preise" },
-  { href: "/ueber-uns", label: "Über uns" },
 ];
-
-/**
- * Kontextsensitiver Header-CTA (Plan Kap. 4):
- * - /mieten + /partyservice: "Verfügbarkeit anfragen" → Anfrage-Flow (kein "Sofort")
- * - alle anderen Seiten: "Verfügbarkeit prüfen" → Anker zum On-Page-Termin-Check
- */
-function ctaFor(pathname: string): { href: string; label: string } {
-  if (pathname.startsWith("/mieten") || pathname.startsWith("/partyservice")) {
-    return { href: `${pathname.startsWith("/mieten") ? "/mieten" : "/partyservice"}#anfrage`, label: "Verfügbarkeit anfragen" };
-  }
-  return { href: `${pathname === "/" ? "" : pathname}#termincheck`, label: "Verfügbarkeit prüfen" };
-}
 
 export function Header() {
   const pathname = usePathname() ?? "/";
-  const cta = ctaFor(pathname);
   const [open, setOpen] = useState(false);
 
   return (
@@ -52,12 +39,12 @@ export function Header() {
           ))}
         </nav>
         <div className="flex items-center gap-3">
-          <a
-            href={cta.href}
+          <Link
+            href="/kontakt#anfrage"
             className="cta-glow hidden cursor-pointer rounded-xl bg-sunset px-4 py-2 text-sm font-semibold text-white transition-transform duration-200 hover:-translate-y-0.5 sm:inline-flex"
           >
-            {cta.label}
-          </a>
+            Anfrage stellen
+          </Link>
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}
@@ -86,13 +73,13 @@ export function Header() {
               </li>
             ))}
             <li>
-              <a
-                href={cta.href}
+              <Link
+                href="/kontakt#anfrage"
                 onClick={() => setOpen(false)}
                 className="mt-1 block rounded-xl bg-sunset px-3 py-2.5 text-center text-base font-semibold text-white"
               >
-                {cta.label}
-              </a>
+                Anfrage stellen
+              </Link>
             </li>
           </ul>
         </nav>

@@ -20,31 +20,26 @@ const fraunces = Fraunces({
 export const metadata: Metadata = {
   metadataBase: new URL(site.domain),
   title: {
-    default: `${site.name}: Location, Catering & Equipment in ${site.region}`,
+    default: `${site.name}: Eventlocation, Buffet und Verleih in ${site.city}`,
     template: `%s | ${site.name}`,
   },
-  description: `Feiern in ${site.region}: Eventlocation, Catering & Partyservice, Bierwagen- und Equipment-Verleih, Eventplanung, alles aus einer Hand. Klare Preise, Angebot bis zum nächsten Werktag 12 Uhr.`,
+  description: `Eventlocation in ${site.city} für rund 100 Gäste, mit Tanzfläche, großem Außenhof und Cocktailwagen. Dazu Buffet-Catering und Equipment zum Mieten.`,
 };
 
-/** LocalBusiness-Schema (Plan Kap. 8), wichtigstes Signal für Local Pack & AEO. */
+/** LocalBusiness-Schema. Nur belegte Angaben: ohne Telefon, E-Mail und PLZ. */
 const localBusinessJsonLd = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   name: site.name,
-  telephone: site.phone,
-  email: site.email,
   url: site.domain,
   address: {
     "@type": "PostalAddress",
     streetAddress: site.address.street,
-    postalCode: site.address.zip,
     addressLocality: site.address.city,
     addressRegion: site.region,
     addressCountry: "DE",
   },
-  areaServed: `${site.region} (Location ${site.serviceAreas.location.radiusKm} km, Catering ${site.serviceAreas.catering.radiusKm} km, Equipment ${site.serviceAreas.equipment.radiusKm} km)`,
-  priceRange: "€€",
-  openingHours: "Mo-Fr 09:00-17:00",
+  areaServed: site.region,
 };
 
 export default function RootLayout({

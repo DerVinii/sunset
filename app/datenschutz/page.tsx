@@ -1,53 +1,56 @@
 import type { Metadata } from "next";
 import { site } from "@/lib/site";
-import { Container } from "@/components/ui-basics";
+import { Container, Section } from "@/components/ui-basics";
 
 export const metadata: Metadata = {
-  title: "Datenschutzerklärung",
+  title: "Datenschutz",
   robots: { index: false },
 };
 
 export default function DatenschutzPage() {
   return (
-    <Container className="prose prose-neutral max-w-3xl py-16 dark:prose-invert">
-      <h1>Datenschutzerklärung</h1>
-      <p>
-        [VOR LAUNCH DURCH VOLLSTÄNDIGE, RECHTLICH GEPRÜFTE DATENSCHUTZERKLÄRUNG ERSETZEN, z. B. über einen
-        Datenschutz-Generator mit anschließender Prüfung. Die folgende Gliederung deckt die auf dieser Website
-        tatsächlich vorhandenen Verarbeitungen ab.]
-      </p>
-      <h2>1. Verantwortlicher</h2>
-      <p>
-        {site.legalName}, {site.address.street}, {site.address.zip} {site.address.city}, E-Mail: {site.email}
-      </p>
-      <h2>2. Anfrageformulare</h2>
-      <p>
-        Ihre Angaben aus den Anfrageformularen (Name, Kontaktdaten, Termin- und Eventdaten) verarbeiten wir
-        ausschließlich zur Bearbeitung Ihrer Anfrage (Art. 6 Abs. 1 lit. b DSGVO). Die Daten werden per E-Mail an uns
-        zugestellt und nicht an Dritte weitergegeben. [SPEICHERFRISTEN ERGÄNZEN]
-      </p>
-      <h2>3. WhatsApp (2-Klick-Lösung)</h2>
-      <p>
-        WhatsApp wird erst nach Ihrem ausdrücklichen zweiten Klick geöffnet. Dabei werden Daten an Meta Platforms
-        Ireland Ltd. übertragen. Rechtsgrundlage: Ihre Einwilligung (Art. 6 Abs. 1 lit. a DSGVO).
-      </p>
-      <h2>4. E-Mail-Zustellung</h2>
-      <p>
-        Für den Versand von Bestätigungs-E-Mails nutzen wir [RESEND / ANBIETER, AVV ABSCHLIESSEN]. E-Mail-Adressen
-        werden rein transaktional genutzt; werbliche E-Mails versenden wir nur mit gesondertem Double-Opt-in.
-      </p>
-      <h2>5. Webanalyse &amp; Cookies</h2>
-      <p>
-        [FALLS TRACKING EINGESETZT WIRD (Google Tag Manager etc.): Consent-Banner, Rechtsgrundlagen und Tools hier
-        beschreiben. Ohne Tracking entfällt dieser Abschnitt. Die Website setzt derzeit keine Marketing-Cookies.]
-      </p>
-      <h2>6. Hosting</h2>
-      <p>[HOSTING-ANBIETER: Vercel Inc., Server-Log-Daten, AVV, Übermittlung in Drittländer beschreiben.]</p>
-      <h2>7. Ihre Rechte</h2>
-      <p>
-        Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung,
-        Datenübertragbarkeit und Widerspruch sowie ein Beschwerderecht bei einer Aufsichtsbehörde.
-      </p>
-    </Container>
+    <Section>
+      <Container className="prose prose-stone max-w-2xl dark:prose-invert">
+        <h1>Datenschutz</h1>
+
+        <h2>Wer die Daten verarbeitet</h2>
+        <p>
+          Verantwortlich ist {site.name}, {site.address.street}, {site.address.city}. Eine Kontaktmöglichkeit für
+          Datenschutzanfragen ergänzen wir, sobald die geschäftliche E-Mail-Adresse eingerichtet ist.
+        </p>
+
+        <h2>Wenn Sie das Formular ausfüllen</h2>
+        <p>
+          Wir verarbeiten die Angaben, die Sie im Anfrageformular machen: Ihren Namen, Ihre Kontaktdaten und das, was
+          Sie uns zu Ihrer Veranstaltung schreiben. Wir nutzen diese Angaben ausschließlich, um Ihre Anfrage zu
+          beantworten. Rechtsgrundlage ist Artikel 6 Absatz 1 Buchstabe b der Datenschutz-Grundverordnung, also die
+          Anbahnung eines Vertrags.
+        </p>
+        <p>
+          Ihre Anfrage wird als E-Mail an uns zugestellt. Für den Versand nutzen wir einen Dienstleister, der die
+          Nachricht in unserem Auftrag verarbeitet. Darüber hinaus geben wir Ihre Angaben nicht weiter.
+        </p>
+        <p>
+          Wir bewahren die Angaben so lange auf, wie wir sie für die Bearbeitung Ihrer Anfrage und eine mögliche
+          Beauftragung brauchen, danach im Rahmen der gesetzlichen Aufbewahrungsfristen.
+        </p>
+
+        <h2>Wenn Sie die Seite besuchen</h2>
+        <p>
+          Beim Aufruf der Seite verarbeitet unser Hoster technische Zugriffsdaten wie IP-Adresse, Zeitpunkt und
+          aufgerufene Adresse. Das ist nötig, damit die Seite ausgeliefert werden kann, und dient der Sicherheit des
+          Betriebs. Rechtsgrundlage ist Artikel 6 Absatz 1 Buchstabe f der Datenschutz-Grundverordnung.
+        </p>
+        <p>Wir setzen keine Cookies zu Werbe- oder Analysezwecken ein und binden keine externen Tracking-Dienste ein.</p>
+
+        <h2>Ihre Rechte</h2>
+        <p>
+          Sie können Auskunft über Ihre gespeicherten Daten verlangen, deren Berichtigung oder Löschung, die
+          Einschränkung der Verarbeitung sowie die Übertragung Ihrer Daten. Einer Verarbeitung auf Grundlage
+          berechtigter Interessen können Sie widersprechen. Außerdem können Sie sich bei einer
+          Datenschutz-Aufsichtsbehörde beschweren.
+        </p>
+      </Container>
+    </Section>
   );
 }
